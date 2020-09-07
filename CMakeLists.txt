@@ -116,9 +116,16 @@ target_link_libraries(modbuscpp PRIVATE Threads::Threads ${Boost_LIBRARIES} fmt 
 
 target_include_directories(
   modbuscpp
-  PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include> $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
+  PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
          $<INSTALL_INTERFACE:include/${PROJECT_NAME}-${PROJECT_VERSION}>
 )
+
+if (Boost_FOUND)
+target_include_directories(
+  modbuscpp
+  PUBLIC $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
+)
+endif()
 
 # ---- Create an installable target ----
 # this allows users to install and find the library via `find_package()`.
