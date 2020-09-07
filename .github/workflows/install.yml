@@ -21,8 +21,9 @@ jobs:
 
     - name: Install dependencies
       run: |
+        sudo add-apt-repository ppa:mhier/libboost-latest
         sudo apt-get update
-        sudo apt-get install libboost1.71-dev libboost1.71-system-dev
+        sudo apt-get install libboost1.74 -y
 
     - name: build and install library
       run: |
