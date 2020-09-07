@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install libboost-dev libboost-system-dev -y
+        sudo apt-get install libboost1.71-dev libboost1.71-system-dev
 
     - name: configure
       run: cmake -Htest -Bbuild -DENABLE_TEST_COVERAGE=1
