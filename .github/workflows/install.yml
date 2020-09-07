@@ -21,7 +21,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo apt-get install libboost-dev libboost-system-dev
+        sudo apt-get update
+        sudo apt-get install libboost-dev libboost-system-dev -y
 
     - name: build and install library
       run: |
