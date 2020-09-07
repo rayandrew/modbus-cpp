@@ -34,9 +34,9 @@ See [client.cpp](standalone/source/client.cpp)
 
 ## TODOs
 
-- [] Add tests
-- [] Complete modbus client/master
-- [] ...
+- [ ] Add tests
+- [ ] Complete modbus client/master
+- [ ] ...
 
 ## Authors
 
