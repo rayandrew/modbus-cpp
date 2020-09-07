@@ -28,7 +28,7 @@ CPMAddPackage(
   NAME struc
   GITHUB_REPOSITORY rayandrews/struc
   VERSION 1
-  GIT_TAG 3e1b2521f104e7e785a8f915efe63d63fb11ed51
+  GIT_TAG 9ef0650fd0b37762fafd49ac5e290cba4606591a
 )
 
 CPMAddPackage(NAME modbuscpp SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
