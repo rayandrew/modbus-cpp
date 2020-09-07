@@ -12,10 +12,14 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v1
-    
+
+    - name: Install dependencies
+      run: |
+        apt-get install libboost-dev libboost-system-dev
+
     - name: configure
       run: cmake -Hstandalone -Bbuild
 

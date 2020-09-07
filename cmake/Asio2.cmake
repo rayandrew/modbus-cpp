@@ -19,17 +19,4 @@ if(asio2_ADDED)
     INTERFACE
       ${Boost_INCLUDE_DIR}
       ${asio2_SOURCE_DIR})
-
-  if (NOT Boost_FOUND)
-    target_link_libraries(asio2
-      INTERFACE
-        Boost::boost)
-  endif()
-
-  #target_compile_definitions(asio2
-    #INTERFACE
-      #ASIO_STANDALONE)
-      # ASIO_NO_DEPRECATED)
 endif()
-
-

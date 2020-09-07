@@ -12,10 +12,10 @@ jobs:
   build:
 
     runs-on: macos-latest
-    
+
     steps:
     - uses: actions/checkout@v1
-    
+
     - name: Install format dependencies
       run: |
         brew install clang-format

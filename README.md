@@ -42,7 +42,7 @@ See [client.cpp](standalone/source/client.cpp)
 
 Ray Andrew <raydreww@gmail.com>
 
-## Acknowledgment
+## Acknowledgement
 
 - [PyModbus](https://github.com/riptideio/pymodbus)
 - [Libmodbus](https://github.com/stephane/libmodbus)

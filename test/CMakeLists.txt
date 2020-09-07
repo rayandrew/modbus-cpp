@@ -33,7 +33,7 @@ CPMAddPackage(
   NAME struc
   GITHUB_REPOSITORY rayandrews/struc
   VERSION 1
-  GIT_TAG 201b4f5ec19139136418e3cb6a263a2f404c7510
+  GIT_TAG 2fbd231f9b7a9dfce9c0eea671ed0e0fc5aaf8b1
 )
 
 if(TEST_INSTALLED_VERSION)

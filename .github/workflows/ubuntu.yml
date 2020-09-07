@@ -16,10 +16,14 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v1
-    
+
+    - name: Install dependencies
+      run: |
+        apt-get install libboost-dev libboost-system-dev
+
     - name: configure
       run: cmake -Htest -Bbuild -DENABLE_TEST_COVERAGE=1
 
