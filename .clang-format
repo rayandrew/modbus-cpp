@@ -1,0 +1,20 @@
+---
+  Language: Cpp
+  BasedOnStyle: Chromium
+  AccessModifierOffset: '-2'
+  AlignTrailingComments: 'true'
+  AlignConsecutiveDeclarations: true
+  AlignOperands: true
+
+  AllowAllParametersOfDeclarationOnNextLine: 'false'
+  AlwaysBreakTemplateDeclarations: 'No'
+  BreakBeforeBraces: Attach
+  ColumnLimit: '80'
+  ConstructorInitializerAllOnOneLineOrOnePerLine: 'true'
+  IndentPPDirectives: AfterHash
+  IndentWidth: '2'
+  # NamespaceIndentation: All
+  BreakBeforeBinaryOperators: All
+  BreakBeforeTernaryOperators: 'true'
+  UseTab: Never
+...
