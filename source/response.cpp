@@ -91,8 +91,8 @@ void response::decode(const packet_t& packet) {
       case internal::stage::error: {
         // decode the packet
         auto exc = packet.at(header_length + 1);
-        throw_exception(static_cast<constants::exception_code>(exc), function(),
-                        header());
+        throw generate_exception(static_cast<constants::exception_code>(exc),
+                                 function(), header());
       } break;
       default:
         decode_passed(packet);

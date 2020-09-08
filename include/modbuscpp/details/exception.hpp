@@ -227,33 +227,34 @@ private:
 };
 }  // namespace ex
 
-inline void throw_exception(constants::exception_code ec,
-                            constants::function_code  function,
-                            const header_t&           request_header) {
+inline auto generate_exception(constants::exception_code ec,
+                               constants::function_code  function,
+                               const header_t&           request_header)
+    -> std::exception {
   switch (ec) {
     case constants::exception_code::illegal_function:
-      throw ex::illegal_function(function, request_header);
+      return ex::illegal_function(function, request_header);
     case constants::exception_code::illegal_data_address:
-      throw ex::illegal_data_address(function, request_header);
+      return ex::illegal_data_address(function, request_header);
     case constants::exception_code::illegal_data_value:
-      throw ex::illegal_data_value(function, request_header);
+      return ex::illegal_data_value(function, request_header);
     case constants::exception_code::server_device_failure:
-      throw ex::server_device_failure(function, request_header);
+      return ex::server_device_failure(function, request_header);
     case constants::exception_code::acknowledge:
-      throw ex::acknowledge(function, request_header);
+      return ex::acknowledge(function, request_header);
     case constants::exception_code::server_device_busy:
-      throw ex::server_device_busy(function, request_header);
+      return ex::server_device_busy(function, request_header);
     case constants::exception_code::negative_acknowledge:
-      throw ex::negative_acknowledge(function, request_header);
+      return ex::negative_acknowledge(function, request_header);
     case constants::exception_code::memory_parity_error:
-      throw ex::memory_parity_error(function, request_header);
+      return ex::memory_parity_error(function, request_header);
     case constants::exception_code::gateway_path_unavailable:
-      throw ex::gateway_path_unavailable(function, request_header);
+      return ex::gateway_path_unavailable(function, request_header);
     case constants::exception_code::gateway_target_device_failed_to_respond:
-      throw ex::gateway_target_device_failed_to_respond(function,
-                                                        request_header);
+      return ex::gateway_target_device_failed_to_respond(function,
+                                                         request_header);
     default:
-      throw ex::bad_exception();
+      return ex::bad_exception();
   }
 }
 }  // namespace modbus
