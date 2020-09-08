@@ -380,7 +380,7 @@ class sequential
     /**
      * Starting address
      */
-    address_t starting_address{0x00};
+    address_t starting_address = address_t{0x00};
     /**
      * Capacity
      */
@@ -580,27 +580,28 @@ class table {
     /**
      * Coils initializer
      */
-    block::bits::initializer_t coils = {};
+    block::bits::initializer_t coils = block::bits::initializer_t{};
     /**
      * Discrete inputs initializer
      */
-    block::bits::initializer_t discrete_inputs = {};
+    block::bits::initializer_t discrete_inputs = block::bits::initializer_t{};
     /**
      * Holding registers initializer
      */
-    block::registers::initializer_t holding_registers = {};
+    block::registers::initializer_t holding_registers
+        = block::registers::initializer_t{};
     /**
      * Input registers initializer
      */
-    block::registers::initializer_t input_registers = {};
+    block::registers::initializer_t input_registers
+        = block::registers::initializer_t{};
   };
 
   /**
    * Table constructor
-   *
    * @param initializer initializer factory
    */
-  explicit table(const initializer_t& initializer = {}) noexcept;
+  explicit table(const initializer_t& initializer = initializer_t{}) noexcept;
 
   /**
    * Get coils block

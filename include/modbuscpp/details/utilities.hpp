@@ -62,26 +62,6 @@ constexpr auto to_underlying(T value) noexcept {
 }
 
 /**
- * Convert type
- */
-template <typename T, std::enable_if_t<(!is_iterable<T>)>* = nullptr>
-inline void convert_type(packet_t&                  packet,
-                         const T&                   value,
-                         const packet_t::size_type& start_index = 0) {
-  typedef const typename packet_t::value_type byte_array[sizeof value];
-
-  if (packet.size() <=
-      start_index + (sizeof(T) / sizeof(packet_t::size_type))) {
-    throw ex::out_of_range("Out of bounds");
-  }
-
-  int increment = 0;
-  for (auto& byte : reinterpret_cast<byte_array&>(value)) {
-    packet[start_index + (increment++)] = byte;
-  }
-}
-
-/**
  * Unpack
  */
 template <typename T, typename = std::enable_if_t<std::is_integral_v<T>>>
