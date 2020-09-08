@@ -51,22 +51,6 @@
 
 namespace modbus {
 namespace utilities {
-/**
- * Pack bytes
- *
- * Implemented by @WindyFields
- *
- * source: https://stackoverflow.com/a/45799472
- */
-template <typename T, typename = void>
-constexpr bool is_iterable = false;
-
-template <typename T>
-constexpr bool is_iterable<T,
-                           decltype(std::begin(std::declval<T&>()) !=
-                                        std::end(std::declval<T&>()),
-                                    void())> = true;
-
 // Get from  https://stackoverflow.com/a/33083231
 // Credits to :
 // - R. Martinho Fernandes
@@ -76,68 +60,6 @@ template <typename T>
 constexpr auto to_underlying(T value) noexcept {
   return static_cast<std::underlying_type_t<T>>(value);
 }
-
-/**
- * for not iteratable values (int, double, custom objects, etc.)
- */
-template <typename T, std::enable_if_t<(!is_iterable<T>)>* = nullptr>
-inline void constexpr pack(packet_t& packet, const T& value) {
-  typedef const typename packet_t::value_type byte_array[sizeof value];
-  for (auto& byte : reinterpret_cast<byte_array&>(value)) {
-    packet.push_back(byte);
-  }
-}
-
-/**
- * for iteratable values (string, vector, etc.)
- */
-template <typename T, std::enable_if_t<is_iterable<T>>* = nullptr>
-inline void constexpr pack(packet_t& packet, const T& values) {
-  for (const auto& value : values) {
-    pack(packet, value);
-  }
-}
-
-/**
- * for c-strings
- */
-template <>
-inline constexpr void pack(packet_t& packet, const char* const& c_str) {
-  for (auto i = 0; c_str[i]; ++i) {
-    packet.push_back(c_str[i]);
-  }
-}
-
-/**
- * for c-strings
- */
-template <>
-inline constexpr void pack(packet_t& packet, char* const& c_str) {
-  pack(packet, static_cast<const char*>(c_str));
-}
-
-/**
- * for static arrays
- */
-template <typename T, size_t N>
-inline constexpr void pack(packet_t& packet, const T (&values)[N]) {
-  for (auto i = 0u; i < N; ++i) {
-    pack(packet, values[i]);
-  }
-}
-
-/**
- * packing up
- */
-template <typename... Args>
-inline packet_t pack(const Args&... args) {
-  packet_t packet;
-  (pack(packet, args), ...);
-  return packet;
-}
-/**
- * End of pack bytes
- */
 
 /**
  * Convert type

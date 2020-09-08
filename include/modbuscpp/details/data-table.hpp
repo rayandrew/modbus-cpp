@@ -580,19 +580,19 @@ class table {
     /**
      * Coils initializer
      */
-    block::bits::initializer_t      coils;
+    block::bits::initializer_t coils = {};
     /**
      * Discrete inputs initializer
      */
-    block::bits::initializer_t      discrete_inputs;
+    block::bits::initializer_t discrete_inputs = {};
     /**
      * Holding registers initializer
      */
-    block::registers::initializer_t holding_registers;
+    block::registers::initializer_t holding_registers = {};
     /**
      * Input registers initializer
      */
-    block::registers::initializer_t input_registers;
+    block::registers::initializer_t input_registers = {};
   };
 
   /**
