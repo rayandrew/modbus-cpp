@@ -389,6 +389,8 @@ class sequential
      * Default value
      */
     data_type default_value = 0;
+
+    initializer_t() = default;
   };
 
   /**
@@ -595,13 +597,15 @@ class table {
      */
     block::registers::initializer_t input_registers
         = block::registers::initializer_t{};
+
+    initializer_t() = default;
   };
 
   /**
    * Table constructor
    * @param initializer initializer factory
    */
-  explicit table(const initializer_t& initializer = initializer_t{}) noexcept;
+  explicit table(const initializer_t& initializer = {}) noexcept;
 
   /**
    * Get coils block
