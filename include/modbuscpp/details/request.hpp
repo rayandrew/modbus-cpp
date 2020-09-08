@@ -23,7 +23,7 @@ class illegal;
 
 namespace internal {
 class request : public adu {
- public:
+public:
   /**
    * Initializer
    */
@@ -93,7 +93,7 @@ namespace request {
  * Will return modbus illegal function exception
  */
 class illegal : public internal::request {
- public:
+public:
   /**
    * Illegal request constructor
    *
@@ -101,10 +101,10 @@ class illegal : public internal::request {
    * @param transaction transaction id
    * @param unit        unit id
    */
-  explicit illegal(
-      constants::function_code function = constants::function_code::min,
-      std::uint16_t            transaction = 0x00,
-      std::uint8_t             unit = 0x00) noexcept;
+  explicit illegal(constants::function_code function
+                   = constants::function_code::min,
+                   std::uint16_t transaction = 0x00,
+                   std::uint8_t  unit = 0x00) noexcept;
 
   /**
    * Encode illegal request packet from given data

@@ -125,7 +125,7 @@ void write_multiple_coils::decode(const packet_t& packet) {
     decode_header(packet);
 
     packet_t::size_type values_idx = header_length + 1 + 5;
-    std::uint8_t byte_count_recv;
+    std::uint8_t        byte_count_recv;
     struc::unpack(fmt::format(">{}", format), packet.data() + header_length + 1,
                   address_.ref(), count_.ref(), byte_count_recv);
     byte_count_ = byte_count_recv;
@@ -192,9 +192,9 @@ packet_t write_single_coil::encode() {
     calc_length(data_length);
     packet_t packet = header_packet();
     packet.reserve(request_->response_size());
-    packet_t pdu =
-        struc::pack(fmt::format(">{}", format), request_->address()(),
-                    utilities::to_underlying(value_));
+    packet_t pdu
+        = struc::pack(fmt::format(">{}", format), request_->address()(),
+                      utilities::to_underlying(value_));
     packet.insert(packet.end(), pdu.begin(), pdu.end());
 
     if (!request_->check_response_packet(packet)) {
@@ -228,8 +228,8 @@ void write_single_coil::decode_passed(const packet_t& packet) {
       throw ex::bad_data();
     }
 
-    if (utilities::to_underlying(request_->value()) != value &&
-        check_bits_value(value)) {
+    if (utilities::to_underlying(request_->value()) != value
+        && check_bits_value(value)) {
       logger::debug("ResponseWriteSingleCoil: Value mismatch");
       throw ex::bad_data();
     }

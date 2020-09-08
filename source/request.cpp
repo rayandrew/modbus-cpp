@@ -38,4 +38,3 @@ typename internal::response::pointer illegal::execute([
 }
 }  // namespace request
 }  // namespace modbus
-

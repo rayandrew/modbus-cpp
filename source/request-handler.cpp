@@ -33,8 +33,8 @@ packet_t request_handler::handle(table* data_table, const packet_t& packet) {
       throw ex::bad_data_size();
     }
 
-    constants::function_code function =
-        static_cast<constants::function_code>(packet.at(header_length));
+    constants::function_code function
+        = static_cast<constants::function_code>(packet.at(header_length));
 
     logger::info("Get {} request", function_code_str(function));
 

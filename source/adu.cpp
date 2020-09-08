@@ -124,9 +124,9 @@ bool adu::operator<(const adu& other) const {
 }
 
 packet_t adu::header_packet() {
-  packet_t packet =
-      struc::pack(fmt::format(">{}", header_func_format), transaction_,
-                  protocol, length_, unit_, function_code_);
+  packet_t packet
+      = struc::pack(fmt::format(">{}", header_func_format), transaction_,
+                    protocol, length_, unit_, function_code_);
   return packet;
 }
 

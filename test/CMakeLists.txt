@@ -81,17 +81,16 @@ doctest_discover_tests(modbuscpp_tests)
 # ---- code coverage ----
 
 if(ENABLE_TEST_COVERAGE)
-  # Coverage works for GCC compiler
-  # TODO: set multiple environment
-  # Clang: https://clang.llvm.org/docs/SourceBasedCodeCoverage.html
-  # lcov -c -i -b . -d . -o cov.info --no-external --exclude "*/test/*"           -> initial / before test
-  # lcov -c -b . -d . -o cov.info --no-external --exclude "*/test/*"              -> after test
-  # lcov --add-tracefile cov-base.info --add-tracefile cov.info -o cov-total.info -> combine
-  ## no need: lcov -r cov.info "*/test/*" -o cov.info
-  if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+  # Coverage works for GCC compiler TODO: set multiple environment Clang:
+  # https://clang.llvm.org/docs/SourceBasedCodeCoverage.html lcov -c -i -b . -d . -o cov.info
+  # --no-external --exclude "*/test/*"           -> initial / before test lcov -c -b . -d . -o
+  # cov.info --no-external --exclude "*/test/*"              -> after test lcov --add-tracefile
+  # cov-base.info --add-tracefile cov.info -o cov-total.info -> combine no need: lcov -r cov.info
+  # "*/test/*" -o cov.info
+  if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     target_compile_options(modbuscpp PUBLIC -O0 -g -fprofile-arcs -ftest-coverage)
     target_link_options(modbuscpp PUBLIC -fprofile-arcs -ftest-coverage)
-  elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+  elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     target_compile_options(modbuscpp PUBLIC -O0 -g -fprofile-instr-generate -fcoverage-mapping)
     target_link_options(modbuscpp PUBLIC -fprofile-instr-generate -fcoverage-mapping)
   endif()

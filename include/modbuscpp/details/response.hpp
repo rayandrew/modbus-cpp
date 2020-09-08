@@ -20,7 +20,7 @@ class table;
 namespace internal {
 class request;
 class response;
-}
+}  // namespace internal
 /*namespace response {*/
 // class error;
 //}
@@ -33,7 +33,7 @@ enum class stage {
 };
 
 class response : public adu {
- public:
+public:
   /**
    * Pointer type
    */
@@ -61,7 +61,7 @@ class response : public adu {
    */
   virtual void decode(const packet_t& packet) override;
 
- protected:
+protected:
   /**
    * Response constructor
    */
@@ -133,7 +133,7 @@ class response : public adu {
     return const_cast<table*>(data_table_);
   }
 
- protected:
+protected:
   /**
    * Request header
    */
@@ -147,7 +147,7 @@ class response : public adu {
 
 namespace response {
 class error : private boost::noncopyable, public internal::response {
- public:
+public:
   /**
    * Create std::unique_ptr of response::error
    *
@@ -165,9 +165,9 @@ class error : private boost::noncopyable, public internal::response {
    *
    * @param exc     exception
    */
-  template <
-      typename T,
-      typename = std::enable_if<std::is_base_of_v<ex::specification_error, T>>>
+  template <typename T,
+            typename
+            = std::enable_if<std::is_base_of_v<ex::specification_error, T>>>
   inline explicit error(const T& ec) noexcept
       : internal::response{ec.function(), ec.header()}, ec_{ec.code()} {
     initialize({ec.header().transaction, ec.header().unit});
@@ -194,13 +194,13 @@ class error : private boost::noncopyable, public internal::response {
    */
   virtual void decode(const packet_t& packet) override;
 
- public:
+public:
   /**
    * Length of packet
    */
   static constexpr typename packet_t::size_type packet_size = header_length + 2;
 
- private:
+private:
   /**
    * Struct format
    */
@@ -213,4 +213,4 @@ class error : private boost::noncopyable, public internal::response {
 }  // namespace response
 }  // namespace modbus
 
-#endif // LIB_MODBUS_MODBUS_RESPONSE_HPP_
+#endif  // LIB_MODBUS_MODBUS_RESPONSE_HPP_

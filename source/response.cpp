@@ -46,9 +46,9 @@ stage response::check_stage(const packet_t& packet) {
 #endif
 
   // 2. check transaction, protocol, and unit id
-  if ((req_header_.transaction != tr) || (protocol != pr) ||
-      (req_header_.unit != un) ||
-      (len != (packet.size() - (header_length - 1)))) {
+  if ((req_header_.transaction != tr) || (protocol != pr)
+      || (req_header_.unit != un)
+      || (len != (packet.size() - (header_length - 1)))) {
     // bad packet
     return stage::bad;
   }
@@ -65,8 +65,8 @@ stage response::check_stage(const packet_t& packet) {
   auto expected_function = utilities::to_underlying(function());
 
   // 5. check expected function code equals with function code from packet
-  if ((expected_function != function_code_) &&
-      !check_function(function_code_)) {
+  if ((expected_function != function_code_)
+      && !check_function(function_code_)) {
     std::uint8_t diff = function_code_ - 0x80;
 
     // 6. if expected function equals packet's function_code - 0x80

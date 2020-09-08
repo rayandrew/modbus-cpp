@@ -258,17 +258,17 @@ read_write_multiple_registers::read_write_multiple_registers(
       values_(values) {}
 
 packet_t read_write_multiple_registers::encode() {
-  if (!read_address_.validate() || !read_count_.validate() ||
-      !write_address_.validate() || !write_count_.validate()) {
+  if (!read_address_.validate() || !read_count_.validate()
+      || !write_address_.validate() || !write_count_.validate()) {
     throw ex::bad_data();
   }
 
   calc_length(data_length());
   packet_t packet = header_packet();
   packet.reserve(header_length + data_length());
-  packet_t pdu =
-      struc::pack(fmt::format(">{}", format), read_address_(), read_count_(),
-                  write_address_(), write_count_(), byte_count());
+  packet_t pdu
+      = struc::pack(fmt::format(">{}", format), read_address_(), read_count_(),
+                    write_address_(), write_count_(), byte_count());
   packet.insert(packet.end(), pdu.begin(), pdu.end());
 
   for (const auto& value : values_) {
@@ -323,9 +323,10 @@ typename internal::response::pointer read_write_multiple_registers::execute(
     throw ex::illegal_data_value(function(), header());
   }
 
-  if (!read_address_.validate() || !write_address_.validate() ||
-      !data_table->holding_registers().validate(read_address_, read_count_) ||
-      !data_table->holding_registers().validate(write_address_, write_count_)) {
+  if (!read_address_.validate() || !write_address_.validate()
+      || !data_table->holding_registers().validate(read_address_, read_count_)
+      || !data_table->holding_registers().validate(write_address_,
+                                                   write_count_)) {
     throw ex::illegal_data_address(function(), header());
   }
 
@@ -502,20 +503,20 @@ packet_t mask_write_register::encode() {
     calc_length(data_length);
     packet_t packet = header_packet();
     packet.reserve(request_->response_size());
-    packet_t pdu =
-        struc::pack(fmt::format(">{}", format), request_->address()(),
-                    request_->and_mask()(), request_->or_mask()());
+    packet_t pdu
+        = struc::pack(fmt::format(">{}", format), request_->address()(),
+                      request_->and_mask()(), request_->or_mask()());
     packet.insert(packet.end(), pdu.begin(), pdu.end());
 
     if (!request_->check_response_packet(packet)) {
       throw ex::server_device_failure(function(), header());
     }
 
-    const auto& current_value =
-        data_table()->holding_registers().get(request_->address());
+    const auto& current_value
+        = data_table()->holding_registers().get(request_->address());
 
-    std::uint16_t new_value =
-        (current_value & request_->and_mask()()) | request_->or_mask()();
+    std::uint16_t new_value
+        = (current_value & request_->and_mask()()) | request_->or_mask()();
     data_table()->holding_registers().set(request_->address(), new_value);
     address_ = request_->address();
     and_mask_ = request_->and_mask();
@@ -624,8 +625,8 @@ void read_write_multiple_registers::decode_passed(const packet_t& packet) {
       throw ex::bad_data();
     }
 
-    uint8_t byte_count_recv =
-        static_cast<std::uint8_t>(request_->read_count().get() * 2);
+    uint8_t byte_count_recv
+        = static_cast<std::uint8_t>(request_->read_count().get() * 2);
     packet_t::size_type byte_idx = header_length + 1;
     count_ = static_cast<std::uint8_t>(packet[byte_idx]);
 

@@ -49,7 +49,7 @@ class base {
                                   write_count_t>,
                 "write_count_t must extends internal::base_metadata_t");
 
- public:
+public:
   /**
    * Data type
    */
@@ -269,7 +269,7 @@ class base {
               << ", default_value=" << obj.default_value();
   }
 
- protected:
+protected:
   /**
    * Mutex
    */
@@ -304,7 +304,7 @@ class base {
 template <typename data_t, typename read_count_t, typename write_count_t>
 class sequential
     : public base<std::vector, data_t, read_count_t, write_count_t> {
- public:
+public:
   /**
    * Data type
    */
@@ -533,13 +533,14 @@ class sequential
    */
   template <typename ostream>
   inline friend ostream& operator<<(ostream& os, const sequential& obj) {
-    return os << static_cast<const base<std::vector, data_t, read_count_t,
-                                        write_count_t>&>(obj)
+    return os << static_cast<
+               const base<std::vector, data_t, read_count_t, write_count_t>&>(
+               obj)
               << ", type=sequential"
               << ")";
   }
 
- protected:
+protected:
   /**
    * Container
    */
@@ -559,10 +560,10 @@ using bits = sequential<bool, read_num_bits_t, write_num_bits_t>;
  * Register blocks
  */
 using registers = sequential<std::uint16_t, read_num_regs_t, write_num_regs_t>;
-}
+}  // namespace block
 
 class table {
- public:
+public:
   /**
    * Pointer type
    */
@@ -666,7 +667,7 @@ class table {
     return input_registers_;
   }
 
- private:
+private:
   /**
    * Coils
    */
@@ -684,9 +685,6 @@ class table {
    */
   block::registers input_registers_;
 };
-}
+}  // namespace modbus
 
-#endif // LIB_MODBUS_MODBUS_DATA_TABLE_HPP_
-
-
-
+#endif  // LIB_MODBUS_MODBUS_DATA_TABLE_HPP_

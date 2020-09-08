@@ -35,18 +35,18 @@ namespace request {
  * [ Starting Address (2 bytes) ]
  * [ Quantity of bits (2 bytes) ]
  */
-template <constants::function_code function_code>
-class base_read_bits : public internal::request {
- public:
+template <constants::function_code function_code> class base_read_bits
+    : public internal::request {
+public:
   /**
    * request::base_read_bits constructor
    *
    * @param address address requested
    * @param count   count   requested
    */
-  explicit base_read_bits(
-      const address_t&       address = address_t{},
-      const read_num_bits_t& count = read_num_bits_t{}) noexcept;
+  explicit base_read_bits(const address_t&       address = address_t{},
+                          const read_num_bits_t& count
+                          = read_num_bits_t{}) noexcept;
 
   /**
    * Encode read bits packet from given data
@@ -109,7 +109,7 @@ class base_read_bits : public internal::request {
    */
   virtual std::ostream& dump(std::ostream& os) const override;
 
- private:
+private:
   /**
    * Data length (4 bytes)
    */
@@ -129,8 +129,8 @@ class base_read_bits : public internal::request {
 };
 
 using read_coils = base_read_bits<constants::function_code::read_coils>;
-using read_discrete_inputs =
-    base_read_bits<constants::function_code::read_discrete_inputs>;
+using read_discrete_inputs
+    = base_read_bits<constants::function_code::read_discrete_inputs>;
 }  // namespace request
 
 namespace response {
@@ -148,9 +148,9 @@ namespace response {
  * [ Byte count = N (1 byte)     ]
  * [ Bits (n = N or N + 1 bytes) ]
  */
-template <constants::function_code function_code>
-class base_read_bits : public internal::response {
- public:
+template <constants::function_code function_code> class base_read_bits
+    : public internal::response {
+public:
   /**
    * Create std::unique_ptr of response::read_bits
    *
@@ -202,7 +202,7 @@ class base_read_bits : public internal::response {
    */
   inline const block::bits::container_type& bits() const { return bits_; }
 
- private:
+private:
   /**
    * Request pointer
    */
@@ -222,9 +222,9 @@ class base_read_bits : public internal::response {
 };
 
 using read_coils = base_read_bits<constants::function_code::read_coils>;
-using read_discrete_inputs =
-    base_read_bits<constants::function_code::read_discrete_inputs>;
+using read_discrete_inputs
+    = base_read_bits<constants::function_code::read_discrete_inputs>;
 }  // namespace response
-}
+}  // namespace modbus
 
 #endif  // LIB_MODBUS_MODBUS_BIT_READ_HPP_

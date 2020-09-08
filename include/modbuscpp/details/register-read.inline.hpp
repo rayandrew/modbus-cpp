@@ -114,7 +114,6 @@ void base_read_registers<function_code>::decode_passed(const packet_t& packet) {
   }
 }
 }  // namespace response
-}
+}  // namespace modbus
 
-#endif // LIB_MODBUS_MODBUS_REGISTER_READ_INLINE_HPP_
-
+#endif  // LIB_MODBUS_MODBUS_REGISTER_READ_INLINE_HPP_

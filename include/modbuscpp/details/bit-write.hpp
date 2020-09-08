@@ -47,7 +47,7 @@ namespace request {
  * [ Output Value (2 bytes)   ]
  */
 class write_single_coil : public internal::request {
- public:
+public:
   /**
    * request::write_single_coil constructor
    *
@@ -98,7 +98,7 @@ class write_single_coil : public internal::request {
    */
   virtual std::ostream& dump(std::ostream& os) const override;
 
- public:
+public:
   /**
    * Get address
    *
@@ -113,7 +113,7 @@ class write_single_coil : public internal::request {
    */
   inline value::bits value() const { return value_; }
 
- private:
+private:
   /**
    * Data length (4 bytes)
    */
@@ -149,7 +149,7 @@ class write_single_coil : public internal::request {
  * [ Output value (N x 1 bytes)    ]
  */
 class write_multiple_coils : public internal::request {
- public:
+public:
   /**
    * request::write_multiple_coils constructor
    *
@@ -210,7 +210,7 @@ class write_multiple_coils : public internal::request {
    */
   virtual std::ostream& dump(std::ostream& os) const override;
 
- public:
+public:
   /**
    * Get address
    *
@@ -232,7 +232,7 @@ class write_multiple_coils : public internal::request {
    */
   inline const block::bits::container_type& values() const { return values_; }
 
- private:
+private:
   /**
    * Get data length
    *
@@ -242,7 +242,7 @@ class write_multiple_coils : public internal::request {
    */
   inline std::uint16_t data_length() const { return 4 + 1 + byte_count_; }
 
- private:
+private:
   /**
    * Address
    */
@@ -280,7 +280,7 @@ namespace response {
  * [ Output Value (2 bytes)   ]
  */
 class write_single_coil : public internal::response {
- public:
+public:
   /**
    * Create std::unique_ptr of response::write_single_coil
    *
@@ -320,7 +320,7 @@ class write_single_coil : public internal::response {
    */
   virtual std::ostream& dump(std::ostream& os) const override;
 
- private:
+private:
   /**
    * Request pointer
    */
@@ -352,7 +352,7 @@ class write_single_coil : public internal::response {
  * [ Quantity of Outputs (2 bytes) ]
  */
 class write_multiple_coils : public internal::response {
- public:
+public:
   /**
    * Create std::unique_ptr of response::write_multiple_coils
    *
@@ -406,7 +406,7 @@ class write_multiple_coils : public internal::response {
    */
   inline const write_num_bits_t& count() const { return count_; }
 
- private:
+private:
   /**
    * Request pointer
    */
@@ -428,8 +428,7 @@ class write_multiple_coils : public internal::response {
    */
   static constexpr std::string_view format = "HH";
 };
-}
-}  // namespace request
+}  // namespace response
+}  // namespace modbus
 
-#endif // LIB_MODBUS_MODBUS_BIT_WRITE_HPP_
-
+#endif  // LIB_MODBUS_MODBUS_BIT_WRITE_HPP_

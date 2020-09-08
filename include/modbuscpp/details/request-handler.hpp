@@ -12,7 +12,7 @@ namespace modbus {
 class table;
 
 class request_handler : private boost::noncopyable {
- public:
+public:
   /**
    * Handle request
    *

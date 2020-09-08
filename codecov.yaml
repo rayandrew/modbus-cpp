@@ -1,5 +1,8 @@
 ignore:
   - "test"
+  - "**/_deps/**"
+  - "**/usr/**"
+  - "*.yaml"
 
 comment:
   require_changes: true

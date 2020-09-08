@@ -27,10 +27,8 @@ std::ostream& base_read_bits<constants::function_code::read_coils>::dump(
   return os;
 }
 
-template <>
-typename internal::response::pointer
-base_read_bits<constants::function_code::read_coils>::execute(
-    table* data_table) {
+template <> typename internal::response::pointer base_read_bits<
+    constants::function_code::read_coils>::execute(table* data_table) {
   if (!count_.validate()) {
     throw ex::illegal_data_value(function(), header());
   }
@@ -43,8 +41,7 @@ base_read_bits<constants::function_code::read_coils>::execute(
       this, data_table);
 }
 
-template <>
-std::ostream&
+template <> std::ostream&
 base_read_bits<constants::function_code::read_discrete_inputs>::dump(
     std::ostream& os) const {
   fmt::print(
@@ -55,8 +52,7 @@ base_read_bits<constants::function_code::read_discrete_inputs>::dump(
   return os;
 }
 
-template <>
-typename internal::response::pointer
+template <> typename internal::response::pointer
 base_read_bits<constants::function_code::read_discrete_inputs>::execute(
     table* data_table) {
   if (!count_.validate()) {
@@ -91,15 +87,15 @@ std::ostream& base_read_bits<constants::function_code::read_coils>::dump(
 template <>
 packet_t base_read_bits<constants::function_code::read_coils>::encode() {
   try {
-    const auto& [start, end] =
-        data_table()->coils().get(request_->address(), request_->count());
+    const auto& [start, end]
+        = data_table()->coils().get(request_->address(), request_->count());
 
     bits_ = block::bits::container_type{start, end};
     calc_length(request_->byte_count() + 1);
     packet_t packet = header_packet();
     packet.reserve(request_->response_size());
-    packet_t pdu =
-        struc::pack(fmt::format(">{}", format), request_->byte_count());
+    packet_t pdu
+        = struc::pack(fmt::format(">{}", format), request_->byte_count());
     packet_t bits = op::pack_bits(start, end);
     packet.insert(packet.end(), pdu.begin(), pdu.end());
     packet.insert(packet.end(), bits.begin(), bits.end());
@@ -116,8 +112,7 @@ packet_t base_read_bits<constants::function_code::read_coils>::encode() {
   }
 }
 
-template <>
-std::ostream&
+template <> std::ostream&
 base_read_bits<constants::function_code::read_discrete_inputs>::dump(
     std::ostream& os) const {
   fmt::print(os,
@@ -130,8 +125,7 @@ base_read_bits<constants::function_code::read_discrete_inputs>::dump(
   return os;
 }
 
-template <>
-packet_t
+template <> packet_t
 base_read_bits<constants::function_code::read_discrete_inputs>::encode() {
   try {
     const auto& [start, end] = data_table()->discrete_inputs().get(
@@ -141,8 +135,8 @@ base_read_bits<constants::function_code::read_discrete_inputs>::encode() {
     calc_length(request_->byte_count() + 1);
     packet_t packet = header_packet();
     packet.reserve(request_->response_size());
-    packet_t pdu =
-        struc::pack(fmt::format(">{}", format), request_->byte_count());
+    packet_t pdu
+        = struc::pack(fmt::format(">{}", format), request_->byte_count());
     packet_t bits = op::pack_bits(start, end);
     packet.insert(packet.end(), pdu.begin(), pdu.end());
     packet.insert(packet.end(), bits.begin(), bits.end());

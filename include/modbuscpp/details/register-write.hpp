@@ -49,16 +49,16 @@ namespace request {
  * [ Register Value (2 bytes)    ]
  */
 class write_single_register : public internal::request {
- public:
+public:
   /**
    * request::write_single_register constructor
    *
    * @param address address requested
    * @param value   value   requested
    */
-  explicit write_single_register(
-      const address_t&   address = address_t{},
-      const reg_value_t& value = reg_value_t{}) noexcept;
+  explicit write_single_register(const address_t&   address = address_t{},
+                                 const reg_value_t& value
+                                 = reg_value_t{}) noexcept;
 
   /**
    * Encode write single register packet from given data
@@ -103,9 +103,7 @@ class write_single_register : public internal::request {
    *
    * @return count
    */
-  inline const reg_value_t& value() const {
-    return value_;
-  }
+  inline const reg_value_t& value() const { return value_; }
 
   /**
    * Dump to string
@@ -116,7 +114,7 @@ class write_single_register : public internal::request {
    */
   virtual std::ostream& dump(std::ostream& os) const override;
 
- private:
+private:
   /**
    * Data length (4 bytes)
    */
@@ -152,7 +150,7 @@ class write_single_register : public internal::request {
  * [ Output value (N x 1 bytes)    ]
  */
 class write_multiple_registers : public internal::request {
- public:
+public:
   /**
    * request::write_multiple_registers constructor
    *
@@ -206,7 +204,7 @@ class write_multiple_registers : public internal::request {
    */
   virtual std::ostream& dump(std::ostream& os) const override;
 
- public:
+public:
   /**
    * Get address
    *
@@ -237,7 +235,7 @@ class write_multiple_registers : public internal::request {
     return values_;
   }
 
- private:
+private:
   /**
    * Get data length
    *
@@ -247,7 +245,7 @@ class write_multiple_registers : public internal::request {
    */
   inline std::uint16_t data_length() const { return 4 + 1 + byte_count(); }
 
- private:
+private:
   /**
    * Address
    */
@@ -282,7 +280,7 @@ class write_multiple_registers : public internal::request {
  * [ Or Mask (2 bytes)           ]
  */
 class mask_write_register : public internal::request {
- public:
+public:
   /**
    * request::mask_write_register constructor
    *
@@ -355,7 +353,7 @@ class mask_write_register : public internal::request {
    */
   virtual std::ostream& dump(std::ostream& os) const override;
 
- private:
+private:
   /**
    * Data length (6 bytes)
    */
@@ -396,7 +394,7 @@ class mask_write_register : public internal::request {
  * [ Write Byte Count (1 byte)   ]
  */
 class read_write_multiple_registers : public internal::request {
- public:
+public:
   /**
    * request::read_write_multiple_registers constructor
    *
@@ -497,7 +495,7 @@ class read_write_multiple_registers : public internal::request {
    */
   virtual std::ostream& dump(std::ostream& os) const override;
 
- private:
+private:
   /**
    * Get data length
    *
@@ -509,7 +507,7 @@ class read_write_multiple_registers : public internal::request {
     return 2 + 2 + 2 + 2 + 1 + byte_count();
   }
 
- private:
+private:
   /**
    * Read address
    */
@@ -535,7 +533,7 @@ class read_write_multiple_registers : public internal::request {
    */
   static constexpr std::string_view format = "HHHHB";
 };
-}
+}  // namespace request
 
 namespace response {
 /**
@@ -551,7 +549,7 @@ namespace response {
  * [ Output Value (2 bytes)   ]
  */
 class write_single_register : public internal::response {
- public:
+public:
   /**
    * Create std::unique_ptr of response::write_single_register
    *
@@ -605,7 +603,7 @@ class write_single_register : public internal::response {
    */
   virtual std::ostream& dump(std::ostream& os) const override;
 
- private:
+private:
   /**
    * Request pointer
    */
@@ -641,7 +639,7 @@ class write_single_register : public internal::response {
  * [ Quantity of Outputs (2 bytes) ]
  */
 class write_multiple_registers : public internal::response {
- public:
+public:
   /**
    * Create std::unique_ptr of response::write_multiple_registers
    *
@@ -696,7 +694,7 @@ class write_multiple_registers : public internal::response {
    */
   inline const write_num_regs_t& count() const { return count_; }
 
- private:
+private:
   /**
    * Request pointer
    */
@@ -733,7 +731,7 @@ class write_multiple_registers : public internal::response {
  * [ Or Mask (2 bytes)           ]
  */
 class mask_write_register : public internal::response {
- public:
+public:
   /**
    * Create std::unique_ptr of response::mask_write_register
    *
@@ -794,7 +792,7 @@ class mask_write_register : public internal::response {
    */
   virtual std::ostream& dump(std::ostream& os) const override;
 
- private:
+private:
   /**
    * Request pointer
    */
@@ -838,7 +836,7 @@ class mask_write_register : public internal::response {
  * N = quantity of registers
  */
 class read_write_multiple_registers : public internal::response {
- public:
+public:
   /**
    * Create std::unique_ptr of response::read_write_multiple_registers
    *
@@ -893,7 +891,7 @@ class read_write_multiple_registers : public internal::response {
     return registers_;
   }
 
- private:
+private:
   /**
    * Request pointer
    */

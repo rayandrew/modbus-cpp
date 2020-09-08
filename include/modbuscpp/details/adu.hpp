@@ -37,7 +37,7 @@ namespace internal {
  * --- Rest of data... (N byte)
  */
 class adu {
- public:
+public:
   /**
    * Initializer
    */
@@ -114,7 +114,7 @@ class adu {
   explicit adu(constants::function_code function,
                const header_t&          m_header) noexcept;
 
- public:
+public:
   /**
    * Encode packet
    *
@@ -136,7 +136,7 @@ class adu {
    */
   virtual void decode(const packet_t& packet) = 0;
 
- public:
+public:
   /** Getter */
   /**
    * Get function code
@@ -279,7 +279,7 @@ class adu {
     return obj.dump(os);
   }
 
- protected:
+protected:
   /**
    * Decode packet header
    *
@@ -309,13 +309,13 @@ class adu {
     return header_length + 1 + data_length;
   }
 
- public:
+public:
   /**
    * Header length
    */
   static constexpr typename packet_t::size_type header_length = 7;
 
- protected:
+protected:
   /**
    * Protocol ID
    */
@@ -328,19 +328,19 @@ class adu {
   /**
    * Max length
    */
-  static constexpr typename packet_t::size_type max_length =
-      constants::max_adu_length;
+  static constexpr typename packet_t::size_type max_length
+      = constants::max_adu_length;
   /**
    * Max PDU length
    */
-  static constexpr typename packet_t::size_type max_pdu_size =
-      max_length - header_length;
+  static constexpr typename packet_t::size_type max_pdu_size
+      = max_length - header_length;
   /**
    * Header struct with function format
    */
   static constexpr std::string_view header_func_format = "HHHBB";
 
- protected:
+protected:
   /**
    * Function
    */

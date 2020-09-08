@@ -35,18 +35,18 @@ namespace request {
  * [ Starting Address (2 bytes)      ]
  * [ Quantity of registers (2 bytes) ]
  */
-template <constants::function_code function_code>
-class base_read_registers : public internal::request {
- public:
+template <constants::function_code function_code> class base_read_registers
+    : public internal::request {
+public:
   /**
    * request::base_read_registers constructor
    *
    * @param address address requested
    * @param count   count   requested
    */
-  explicit base_read_registers(
-      const address_t&       address = address_t{},
-      const read_num_regs_t& count = read_num_regs_t{}) noexcept;
+  explicit base_read_registers(const address_t&       address = address_t{},
+                               const read_num_regs_t& count
+                               = read_num_regs_t{}) noexcept;
 
   /**
    * Encode read registers packet from given data
@@ -109,7 +109,7 @@ class base_read_registers : public internal::request {
    */
   virtual std::ostream& dump(std::ostream& os) const override;
 
- private:
+private:
   /**
    * Data length (4 bytes)
    */
@@ -128,10 +128,10 @@ class base_read_registers : public internal::request {
   static constexpr std::string_view format = "HH";
 };
 
-using read_holding_registers =
-    base_read_registers<constants::function_code::read_holding_registers>;
-using read_input_registers =
-    base_read_registers<constants::function_code::read_input_registers>;
+using read_holding_registers
+    = base_read_registers<constants::function_code::read_holding_registers>;
+using read_input_registers
+    = base_read_registers<constants::function_code::read_input_registers>;
 }  // namespace request
 
 namespace response {
@@ -151,9 +151,9 @@ namespace response {
  *
  * N = quantity of registers
  */
-template <constants::function_code function_code>
-class base_read_registers : public internal::response {
- public:
+template <constants::function_code function_code> class base_read_registers
+    : public internal::response {
+public:
   /**
    * Create std::unique_ptr of response::read_registers
    * @return std::unique_ptr of response::read_registers
@@ -207,7 +207,7 @@ class base_read_registers : public internal::response {
     return registers_;
   }
 
- private:
+private:
   /**
    * Request pointer
    */
@@ -226,10 +226,10 @@ class base_read_registers : public internal::response {
   static constexpr std::string_view format = "B";
 };
 
-using read_holding_registers =
-    base_read_registers<constants::function_code::read_holding_registers>;
-using read_input_registers =
-    base_read_registers<constants::function_code::read_input_registers>;
+using read_holding_registers
+    = base_read_registers<constants::function_code::read_holding_registers>;
+using read_input_registers
+    = base_read_registers<constants::function_code::read_input_registers>;
 }  // namespace response
 }  // namespace modbus
 

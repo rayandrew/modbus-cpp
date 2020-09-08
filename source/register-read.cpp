@@ -74,26 +74,25 @@ base_read_registers<constants::function_code::read_input_registers>::execute(
 }  // namespace request
 
 namespace response {
-  template class base_read_registers<
-      constants::function_code::read_holding_registers>;
-  template class base_read_registers<
-      constants::function_code::read_input_registers>;
+template class base_read_registers<
+    constants::function_code::read_holding_registers>;
+template class base_read_registers<
+    constants::function_code::read_input_registers>;
 
-  template <> std::ostream&
-  base_read_registers<constants::function_code::read_holding_registers>::dump(
-      std::ostream& os) const {
-    fmt::print(os,
-               "ResponseReadHoldingRegisters(header[transaction={:#04x}, "
-               "protocol={:#04x}, "
-               "unit={:#04x}], pdu[function={:#04x}, address={:#04x}, "
-               "count={}, registers_size={}])",
-               transaction_, protocol, unit_, function_code_,
-               request_->address()(), request_->count(), registers_.size());
-    return os;
+template <> std::ostream&
+base_read_registers<constants::function_code::read_holding_registers>::dump(
+    std::ostream& os) const {
+  fmt::print(os,
+             "ResponseReadHoldingRegisters(header[transaction={:#04x}, "
+             "protocol={:#04x}, "
+             "unit={:#04x}], pdu[function={:#04x}, address={:#04x}, "
+             "count={}, registers_size={}])",
+             transaction_, protocol, unit_, function_code_,
+             request_->address()(), request_->count(), registers_.size());
+  return os;
 }
 
-template <>
-packet_t base_read_registers<
+template <> packet_t base_read_registers<
     constants::function_code::read_holding_registers>::encode() {
   try {
     const auto& [start, end] = data_table()->holding_registers().get(
@@ -103,8 +102,8 @@ packet_t base_read_registers<
     calc_length(request_->byte_count() + 1);
     packet_t packet = header_packet();
     packet.reserve(request_->response_size());
-    packet_t pdu =
-        struc::pack(fmt::format(">{}", format), request_->byte_count());
+    packet_t pdu
+        = struc::pack(fmt::format(">{}", format), request_->byte_count());
     packet.insert(packet.end(), pdu.begin(), pdu.end());
 
     for (auto ptr = start; ptr < end; ++ptr) {
@@ -125,8 +124,7 @@ packet_t base_read_registers<
   }
 }
 
-template <>
-std::ostream&
+template <> std::ostream&
 base_read_registers<constants::function_code::read_input_registers>::dump(
     std::ostream& os) const {
   fmt::print(os,
@@ -139,8 +137,7 @@ base_read_registers<constants::function_code::read_input_registers>::dump(
   return os;
 }
 
-template <>
-packet_t
+template <> packet_t
 base_read_registers<constants::function_code::read_input_registers>::encode() {
   try {
     const auto& [start, end] = data_table()->input_registers().get(
@@ -150,8 +147,8 @@ base_read_registers<constants::function_code::read_input_registers>::encode() {
     calc_length(request_->byte_count() + 1);
     packet_t packet = header_packet();
     packet.reserve(request_->response_size());
-    packet_t pdu =
-        struc::pack(fmt::format(">{}", format), request_->byte_count());
+    packet_t pdu
+        = struc::pack(fmt::format(">{}", format), request_->byte_count());
     packet.insert(packet.end(), pdu.begin(), pdu.end());
 
     for (auto ptr = start; ptr < end; ++ptr) {

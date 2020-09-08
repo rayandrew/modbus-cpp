@@ -24,10 +24,9 @@
  *
  * @param T class to be enabled
  */
-#define MAKE_STD_SHARED(T)                                   \
-  template <typename... Args>                                \
-  inline static auto create(Args&&... args) {                \
-    return std::make_shared<T>(std::forward<Args>(args)...); \
+#define MAKE_STD_SHARED(T)                                                \
+  template <typename... Args> inline static auto create(Args&&... args) { \
+    return std::make_shared<T>(std::forward<Args>(args)...);              \
   }
 
 /**
@@ -43,10 +42,9 @@
  *
  * @param T class to be enabled
  */
-#define MAKE_STD_UNIQUE(T)                                   \
-  template <typename... Args>                                \
-  inline static auto create(Args&&... args) {                \
-    return std::make_unique<T>(std::forward<Args>(args)...); \
+#define MAKE_STD_UNIQUE(T)                                                \
+  template <typename... Args> inline static auto create(Args&&... args) { \
+    return std::make_unique<T>(std::forward<Args>(args)...);              \
   }
 
 namespace modbus {
@@ -56,8 +54,7 @@ namespace utilities {
 // - R. Martinho Fernandes
 // (https://stackoverflow.com/users/46642/r-martinho-fernandes)
 // - Class Skeleton (https://stackoverflow.com/users/3387452/class-skeleton)
-template <typename T>
-constexpr auto to_underlying(T value) noexcept {
+template <typename T> constexpr auto to_underlying(T value) noexcept {
   return static_cast<std::underlying_type_t<T>>(value);
 }
 
@@ -65,20 +62,22 @@ constexpr auto to_underlying(T value) noexcept {
  * Unpack
  */
 template <typename T, typename = std::enable_if_t<std::is_integral_v<T>>>
-inline constexpr T unpack(const packet_t&            packet,
-                          const packet_t::size_type& start_index = 0) {
+inline T unpack(const packet_t&            packet,
+                const packet_t::size_type& start_index = 0) {
   if constexpr (std::is_same_v<packet_t::value_type, T>) {
     return packet[start_index];
   } else if constexpr (std::is_same_v<T, std::uint16_t>) {
-    if (packet.size() <=
-        start_index + (sizeof(std::uint16_t) / sizeof(packet_t::size_type))) {
+    if (packet.size()
+        <= start_index
+               + (sizeof(std::uint16_t) / sizeof(packet_t::size_type))) {
       throw ex::out_of_range("Out of bounds");
     }
 
     return ntohs(*(std::uint16_t*)(packet.data() + start_index));
   } else if constexpr (std::is_same_v<T, std::uint32_t>) {
-    if (packet.size() <=
-        start_index + (sizeof(std::uint32_t) / sizeof(packet_t::size_type))) {
+    if (packet.size()
+        <= start_index
+               + (sizeof(std::uint32_t) / sizeof(packet_t::size_type))) {
       throw ex::out_of_range("Out of bounds");
     }
     return ntohl(*(std::uint32_t*)(packet.data() + start_index));

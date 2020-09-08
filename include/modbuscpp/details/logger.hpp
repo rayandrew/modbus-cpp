@@ -11,7 +11,7 @@
 
 namespace modbus {
 class logger : private boost::noncopyable {
- public:
+public:
   /**
    * Create singleton instance
    *
@@ -138,7 +138,7 @@ class logger : private boost::noncopyable {
     get()->debug_impl(message);
   }
 
- protected:
+protected:
   /**
    * Log info message to stdout
    *
@@ -200,21 +200,18 @@ class logger : private boost::noncopyable {
    */
   virtual void debug_impl(const std::string& message) const noexcept;
 
- protected:
+protected:
   /**
    * Debug
    */
   bool debug_;
 
- private:
+private:
   /**
    * Singleton instance
    */
   static logger* instance_;
 };
-}
+}  // namespace modbus
 
-#endif // LIB_MODBUS_MODBUS_LOGGER_HPP_
-
-
-
+#endif  // LIB_MODBUS_MODBUS_LOGGER_HPP_

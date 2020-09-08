@@ -18,7 +18,7 @@
 
 namespace modbus {
 class server : private boost::noncopyable {
- public:
+public:
   /**
    * Session pointer type
    */
@@ -41,16 +41,16 @@ class server : private boost::noncopyable {
    */
   MAKE_STD_UNIQUE(server)
 
- public:
+public:
   /**
    * Server constructor
    *
    * @param data_table  data table pointer
    * @param concurrency number of concurrency
    */
-  explicit server(
-      table::pointer data_table,
-      std::size_t    concurrency = std::thread::hardware_concurrency() * 2);
+  explicit server(table::pointer data_table,
+                  std::size_t    concurrency
+                  = std::thread::hardware_concurrency() * 2);
 
   /**
    * Server Destructor
@@ -83,7 +83,7 @@ class server : private boost::noncopyable {
     on_disconnect_cb_ = std::move(on_disconnect_callback);
   }
 
- private:
+private:
   /**
    * Start server callback
    *
@@ -120,7 +120,7 @@ class server : private boost::noncopyable {
    */
   void on_receive(session_ptr_t& session_ptr, std::string_view raw_packet);
 
- private:
+private:
   /**
    * Asio server
    */

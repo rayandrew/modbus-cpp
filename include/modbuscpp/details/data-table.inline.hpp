@@ -201,6 +201,4 @@ inline void sequential<data_t, read_count_t, write_count_t>::reset() {
 }  // namespace block
 }  // namespace modbus
 
-#endif // LIB_MODBUS_MODBUS_DATA_TABLE_INLINE_HPP_
-
-
+#endif  // LIB_MODBUS_MODBUS_DATA_TABLE_INLINE_HPP_

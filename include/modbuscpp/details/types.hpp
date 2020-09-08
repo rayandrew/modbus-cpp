@@ -44,9 +44,8 @@ namespace internal {
  */
 template <typename T, typename = std::enable_if_t<std::is_integral_v<T>>>
 class base_metadata_t {
- public:
-  template <T Value>
-  using constant = std::integral_constant<T, Value>;
+public:
+  template <T Value> using constant = std::integral_constant<T, Value>;
 
   /**
    * Validate value
@@ -254,7 +253,7 @@ class base_metadata_t {
    */
   inline bool validate() noexcept { return validate(get()); }
 
- private:
+private:
   /**
    * Value
    */
@@ -275,9 +274,9 @@ using reg_value_t = internal::base_metadata_t<std::uint16_t>;
  */
 using mask_t = internal::base_metadata_t<std::uint16_t>;
 
-template <bool write>
-class num_bits_t : public internal::base_metadata_t<std::uint16_t> {
- public:
+template <bool write> class num_bits_t
+    : public internal::base_metadata_t<std::uint16_t> {
+public:
   using internal::base_metadata_t<std::uint16_t>::constant;
   using internal::base_metadata_t<std::uint16_t>::get;
   using internal::base_metadata_t<std::uint16_t>::validate;
@@ -290,8 +289,9 @@ class num_bits_t : public internal::base_metadata_t<std::uint16_t> {
    * @return true if pass the test
    */
   inline static constexpr bool validate(std::uint16_t value) noexcept {
-    return value > 0 && value <= (write ? constants::max_num_bits_write
-                                        : constants::max_num_bits_read);
+    return value > 0
+           && value <= (write ? constants::max_num_bits_write
+                              : constants::max_num_bits_read);
   }
 
   /**
@@ -322,9 +322,9 @@ class num_bits_t : public internal::base_metadata_t<std::uint16_t> {
   }
 };
 
-template <bool write>
-class num_regs_t : public internal::base_metadata_t<std::uint16_t> {
- public:
+template <bool write> class num_regs_t
+    : public internal::base_metadata_t<std::uint16_t> {
+public:
   using internal::base_metadata_t<std::uint16_t>::constant;
   using internal::base_metadata_t<std::uint16_t>::get;
   using internal::base_metadata_t<std::uint16_t>::validate;
@@ -337,8 +337,9 @@ class num_regs_t : public internal::base_metadata_t<std::uint16_t> {
    * @return true if pass the test
    */
   inline static constexpr bool validate(std::uint16_t value) noexcept {
-    return value > 0 && value <= (write ? constants::max_num_regs_write
-                                        : constants::max_num_regs_read);
+    return value > 0
+           && value <= (write ? constants::max_num_regs_write
+                              : constants::max_num_regs_read);
   }
 
   /**
@@ -376,4 +377,4 @@ using read_num_regs_t = num_regs_t<false>;
 using write_num_regs_t = num_regs_t<true>;
 }  // namespace modbus
 
-#endif // LIB_MODBUS_MODBUS_TYPES_HPP_
+#endif  // LIB_MODBUS_MODBUS_TYPES_HPP_

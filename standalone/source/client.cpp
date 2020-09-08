@@ -22,12 +22,12 @@ static void cout_bytes(std::string_view packet) {
 }
 
 class client_logger : public modbus::logger {
- public:
-   explicit client_logger(bool debug = false) : modbus::logger(debug) {}
+public:
+  explicit client_logger(bool debug = false) : modbus::logger(debug) {}
 
-   virtual ~client_logger() override {}
+  virtual ~client_logger() override {}
 
- protected:
+protected:
   inline virtual void error_impl(
       const std::string& message) const noexcept override {
     spdlog::error("{}", message);

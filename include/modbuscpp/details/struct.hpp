@@ -4,5 +4,4 @@
 #include <boost/endian/conversion.hpp>
 #include <struc.hpp>
 
-#endif // LIB_MODBUS_STRUCT_HPP_
-
+#endif  // LIB_MODBUS_STRUCT_HPP_

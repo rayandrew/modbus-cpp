@@ -14,12 +14,12 @@
 #include <modbuscpp/modbus.hpp>
 
 class server_logger : public modbus::logger {
- public:
+public:
   explicit server_logger(bool debug = false) : modbus::logger(debug) {}
 
   virtual ~server_logger() override {}
 
- protected:
+protected:
   inline virtual void error_impl(
       const std::string& message) const noexcept override {
     spdlog::error("{}", message);

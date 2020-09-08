@@ -115,16 +115,12 @@ target_compile_options(modbuscpp PUBLIC "$<$<BOOL:${MSVC}>:/permissive->")
 target_link_libraries(modbuscpp PRIVATE Threads::Threads ${Boost_LIBRARIES} fmt struc asio2)
 
 target_include_directories(
-  modbuscpp
-  PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
-         $<INSTALL_INTERFACE:include/${PROJECT_NAME}-${PROJECT_VERSION}>
+  modbuscpp PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+                   $<INSTALL_INTERFACE:include/${PROJECT_NAME}-${PROJECT_VERSION}>
 )
 
-if (Boost_FOUND)
-target_include_directories(
-  modbuscpp
-  PUBLIC $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
-)
+if(Boost_FOUND)
+  target_include_directories(modbuscpp PUBLIC $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>)
 endif()
 
 # ---- Create an installable target ----

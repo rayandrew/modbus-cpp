@@ -83,15 +83,15 @@ void base_read_bits<function_code>::decode_passed(const packet_t& packet) {
       throw ex::bad_data();
     }
 
-    packet_t::size_type         byte_idx = header_length + 1;
+    packet_t::size_type byte_idx = header_length + 1;
     count_ = static_cast<std::uint16_t>(packet[byte_idx]);
 
     if (count_ != request_->count().get()) {
       throw ex::bad_data();
     }
 
-    block::bits::container_type buffer =
-        op::unpack_bits(packet.begin() + byte_idx + 1, packet.end());
+    block::bits::container_type buffer
+        = op::unpack_bits(packet.begin() + byte_idx + 1, packet.end());
 
     if (buffer.size() != request_->count().get()) {
       throw ex::bad_data();

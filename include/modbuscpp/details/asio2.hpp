@@ -7,4 +7,4 @@
 #include <asio2/base/timer.hpp>
 #include <asio2/tcp/tcp_server.hpp>
 
-#endif // LIB_MODBUS_ASIO2_HPP_
+#endif  // LIB_MODBUS_ASIO2_HPP_
