@@ -1,11 +1,17 @@
 #ifndef LIB_MODBUS_MODBUS_UTILITIES_HPP_
 #define LIB_MODBUS_MODBUS_UTILITIES_HPP_
 
-#include <arpa/inet.h>
 #include <cstdint>
 #include <memory>
 #include <string>
 #include <type_traits>
+
+#if defined(WIN32) || defined(_WIN32) \
+    || defined(__WIN32) && !defined(__CYGWIN__)
+#  include <winsock.h>
+#else
+#  include <arpa/inet.h>
+#endif
 
 #include "types.hpp"
 
