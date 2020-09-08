@@ -17,6 +17,6 @@ if(asio2_ADDED)
 
   target_include_directories(asio2
     INTERFACE
-      ${Boost_INCLUDE_DIR}
-      ${asio2_SOURCE_DIR})
+      $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
+      $<BUILD_INTERFACE:${asio2_SOURCE_DIR}>)
 endif()
