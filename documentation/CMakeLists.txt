@@ -6,6 +6,21 @@ project(modbuscpp_docs)
 
 include(../cmake/CPM.cmake)
 
+include(../cmake/Asio2.cmake)
+
+CPMAddPackage(
+  NAME fmt
+  GITHUB_REPOSITORY fmtlib/fmt
+  GIT_TAG 6.2.1
+)
+
+CPMAddPackage(
+  NAME struc
+  GITHUB_REPOSITORY rayandrews/struc
+  VERSION 1
+  GIT_TAG 235db327aeec3a83c9204033e3a7b0a74c866151
+)
+
 CPMAddPackage(NAME modbuscpp SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
 
 CPMAddPackage(
