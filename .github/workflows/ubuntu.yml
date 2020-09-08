@@ -20,11 +20,14 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Install dependencies
-      run: |
-        sudo add-apt-repository ppa:mhier/libboost-latest
-        sudo apt-get update
-        sudo apt-get install libboost1.74 libboost1.74-dev -y
+    #- name: Install dependencies
+      #run: |
+        #sudo add-apt-repository ppa:mhier/libboost-latest
+        #sudo apt-get update
+        #sudo apt-get install libboost1.74 libboost1.74-dev -y
+
+    - name: Export boost environment
+      run: "export BOOST_ROOT=$BOOST_ROOT_1_72_0"
 
     - name: configure
       run: cmake -Htest -Bbuild -DENABLE_TEST_COVERAGE=1

@@ -19,10 +19,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - name: Export boost environment
+      run: "echo ::set-env name=BOOST_ROOT::%BOOST_ROOT_1_72_0%"
+      shell: cmd
+
     - name: configure
-      run: |
-        $env:BOOST_ROOT = $env:BOOST_ROOT_1_72_0
-        cmake -Htest -Bbuild
+      run: cmake -Htest -Bbuild
 
     - name: build
       run: cmake --build build --config Debug -j4
