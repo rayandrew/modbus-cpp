@@ -4,6 +4,11 @@
 #include <cstdint>
 #include <string_view>
 
+#if defined(WIN32) || defined(_WIN32) \
+    || defined(__WIN32) && !defined(__CYGWIN__)
+#  undef exception_code
+#endif
+
 namespace modbus {
 namespace constants {
 /**

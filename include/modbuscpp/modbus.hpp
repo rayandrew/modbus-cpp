@@ -7,12 +7,19 @@
 
 #pragma GCC system_header
 
+#if defined(WIN32) || defined(_WIN32) \
+    || defined(__WIN32) && !defined(__CYGWIN__)
+#  undef exception_code
+#endif
+
 #include "details/asio2.hpp"
 #include "details/struct.hpp"
 
 #include "details/constants.hpp"
-#include "details/exception.hpp"
 #include "details/types.hpp"
+
+#include "details/exception.hpp"
+
 #include "details/utilities.hpp"
 
 #include "details/logger.hpp"

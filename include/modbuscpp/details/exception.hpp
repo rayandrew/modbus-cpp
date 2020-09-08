@@ -10,6 +10,11 @@
 #include "constants.hpp"
 #include "types.hpp"
 
+#if defined(WIN32) || defined(_WIN32) \
+    || defined(__WIN32) && !defined(__CYGWIN__)
+#  undef exception_code
+#endif
+
 namespace modbus {
 namespace ex {
 // forward declarations

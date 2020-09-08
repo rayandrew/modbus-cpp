@@ -6,7 +6,6 @@
 #include <type_traits>
 #include <vector>
 
-#include <fmt/compile.h>
 #include <fmt/format.h>
 
 #include "constants.hpp"
