@@ -13,6 +13,8 @@ include(../cmake/tools.cmake)
 
 # ---- Dependencies ----
 
+find_package(Threads REQUIRED)
+
 include(../cmake/CPM.cmake)
 
 include(../cmake/Asio2.cmake)
