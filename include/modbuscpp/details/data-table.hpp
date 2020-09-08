@@ -389,8 +389,6 @@ class sequential
      * Default value
      */
     data_type default_value = 0;
-
-    initializer_t() = default;
   };
 
   /**
@@ -582,23 +580,32 @@ class table {
     /**
      * Coils initializer
      */
-    block::bits::initializer_t coils = block::bits::initializer_t{};
+    block::bits::initializer_t coils
+        = {.address = address_t{0x00},
+           .capacity = block::bits::initializer_t::max_capacity,
+           .default_value = 0};
     /**
      * Discrete inputs initializer
      */
-    block::bits::initializer_t discrete_inputs = block::bits::initializer_t{};
+    block::bits::initializer_t discrete_inputs
+        = {.address = address_t{0x00},
+           .capacity = block::bits::initializer_t::max_capacity,
+           .default_value = 0};
     /**
      * Holding registers initializer
      */
     block::registers::initializer_t holding_registers
-        = block::registers::initializer_t{};
+        = {.address = address_t{0x00},
+           .capacity = block::registers::initializer_t::max_capacity,
+           .default_value = 0};
+    ;
     /**
      * Input registers initializer
      */
     block::registers::initializer_t input_registers
-        = block::registers::initializer_t{};
-
-    initializer_t() = default;
+        = {.address = address_t{0x00},
+           .capacity = block::registers::initializer_t::max_capacity,
+           .default_value = 0};
   };
 
   /**
