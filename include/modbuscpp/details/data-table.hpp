@@ -580,31 +580,30 @@ class table {
     /**
      * Coils initializer
      */
-    block::bits::initializer_t coils
-        = {.address = address_t{0x00},
-           .capacity = block::bits::initializer_t::max_capacity,
-           .default_value = 0};
+    block::bits::initializer_t coils = {.starting_address = address_t{0x00},
+                                        .capacity = block::bits::max_capacity,
+                                        .default_value = 0};
     /**
      * Discrete inputs initializer
      */
     block::bits::initializer_t discrete_inputs
-        = {.address = address_t{0x00},
-           .capacity = block::bits::initializer_t::max_capacity,
+        = {.starting_address = address_t{0x00},
+           .capacity = block::bits::max_capacity,
            .default_value = 0};
     /**
      * Holding registers initializer
      */
     block::registers::initializer_t holding_registers
-        = {.address = address_t{0x00},
-           .capacity = block::registers::initializer_t::max_capacity,
+        = {.starting_address = address_t{0x00},
+           .capacity = block::registers::max_capacity,
            .default_value = 0};
-    ;
+
     /**
      * Input registers initializer
      */
     block::registers::initializer_t input_registers
-        = {.address = address_t{0x00},
-           .capacity = block::registers::initializer_t::max_capacity,
+        = {.starting_address = address_t{0x00},
+           .capacity = block::registers::max_capacity,
            .default_value = 0};
   };
 
@@ -612,7 +611,7 @@ class table {
    * Table constructor
    * @param initializer initializer factory
    */
-  explicit table(const initializer_t& initializer = {}) noexcept;
+  explicit table(const initializer_t& initializer = {{}, {}, {}, {}}) noexcept;
 
   /**
    * Get coils block
