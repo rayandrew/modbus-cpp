@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>modbus::constants namespace | modbuscpp</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">modbuscpp</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="pages.html">Pages</a>
+              <ol>
+                <li><a href="about.html">About</a></li>
+              </ol>
+            </li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacemodbus.html">modbus</a>::<wbr/></span>constants <span class="m-thin">namespace</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="constants_8hpp.html">&lt;modbuscpp/details/constants.hpp&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#enum-members">Enums</a></li>
+                <li><a href="#var-members">Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="enum-members">
+          <h2><a href="#enum-members">Enums</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a966ff53f9a39377947d4be2da162b024" class="m-doc">function_code</a>: std::uint8_t { </span><span class="m-doc-wrap"><a href="#a966ff53f9a39377947d4be2da162b024ad8bd79cc131920d5de426f914d17405a" class="m-doc">min</a> = 0x00,
+              <a href="#a966ff53f9a39377947d4be2da162b024a818fae470a43653be833df8e6a9c29aa" class="m-doc">read_coils</a> = 0x01,
+              <a href="#a966ff53f9a39377947d4be2da162b024a1e8b083c4ac814914a207d238fccb89a" class="m-doc">read_discrete_inputs</a> = 0x02,
+              <a href="#a966ff53f9a39377947d4be2da162b024a5b5d6698e68b9bbc9df1d0562f0954e6" class="m-doc">read_holding_registers</a> = 0x03,
+              <a href="#a966ff53f9a39377947d4be2da162b024adb84751cd148bdf02c3e4fc48e628d18" class="m-doc">read_input_registers</a> = 0x04,
+              <a href="#a966ff53f9a39377947d4be2da162b024adf958ed81fd9bb2470e560ba26b78842" class="m-doc">write_single_coil</a> = 0x05,
+              <a href="#a966ff53f9a39377947d4be2da162b024a342663aee92272c601640f282fd0b5c9" class="m-doc">write_single_register</a> = 0x06,
+              <a href="#a966ff53f9a39377947d4be2da162b024ab7d1bf4d02bc340277ce19ace6d09172" class="m-doc">read_exception_status</a> = 0x07,
+              <a href="#a966ff53f9a39377947d4be2da162b024ae7781bd03c1d3248aa3fc03afe6bfc54" class="m-doc">diagnostics</a> = 0x08,
+              <a href="#a966ff53f9a39377947d4be2da162b024a18501e49826fb998b691548b14add22b" class="m-doc">write_multiple_coils</a> = 0x0F,
+              <a href="#a966ff53f9a39377947d4be2da162b024a5d82249efafb8912b27f3913d44c663c" class="m-doc">write_multiple_registers</a> = 0x10,
+              <a href="#a966ff53f9a39377947d4be2da162b024a559b4780f0aae8e9e700bd705992989e" class="m-doc">read_file_record</a> = 0x14,
+              <a href="#a966ff53f9a39377947d4be2da162b024ab57d283d4859270137da0b5382c56b4a" class="m-doc">write_file_record</a> = 0x15,
+              <a href="#a966ff53f9a39377947d4be2da162b024a869aecc74fc75dbd036289371a45ccbc" class="m-doc">mask_write_register</a> = 0x16,
+              <a href="#a966ff53f9a39377947d4be2da162b024a2455adb6610966346015cc8ac6b59b73" class="m-doc">read_write_multiple_registers</a> = 0x17,
+              <a href="#a966ff53f9a39377947d4be2da162b024abf50505b8ecb9be31ea9326c0dec0d4f" class="m-doc">read_fifo_queue</a> = 0x18,
+              <a href="#a966ff53f9a39377947d4be2da162b024aa28f7fbcfbd986c208c1bb2e0d970e1a" class="m-doc">encapsulated_interface_transport</a> = 0x2B,
+              <a href="#a966ff53f9a39377947d4be2da162b024a2ffe4e77325d9a7152f7086ea7aa5114" class="m-doc">max</a> = 0x2C }</span>
+            </dt>
+            <dd>is a strongly typed enum class representing the function of Modbus</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#a83bcd14bc37234b1d4bd5db869ec7046" class="m-doc">exception_code</a>: std::uint8_t { </span><span class="m-doc-wrap"><a href="#a83bcd14bc37234b1d4bd5db869ec7046ad8bd79cc131920d5de426f914d17405a" class="m-doc">min</a> = 0x00,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046aa08a5996592e861abd887093c5268f16" class="m-doc">illegal_function</a> = 0x01,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a1e0042b2a5660751f5ddbaa4b6921588" class="m-doc">illegal_data_address</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046aeb335287c4f00edeed4f1ea2a9c53e21" class="m-doc">illegal_data_value</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a08c43362b5edf0850adf61c2ad8b03c3" class="m-doc">server_device_failure</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a7daca0569890410155f9fbb480e40e88" class="m-doc">acknowledge</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a249a4208fc60c6a5824fcde1e92ed6a5" class="m-doc">server_device_busy</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046afe88011e32129bc3a13597c617dd3d73" class="m-doc">negative_acknowledge</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046acddec642c1143ee9c852a5f23fb246df" class="m-doc">memory_parity_error</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046af31ee5e3824f1f5e5d206bdf3029f22b" class="m-doc">undef</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a47b950fd0d1b8f16552721f817836248" class="m-doc">gateway_path_unavailable</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a17a85951e5f2e1d2ae4934cc9eccb3fc" class="m-doc">gateway_target_device_failed_to_respond</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a9328cf8e53ae6c84c8d36ae8b07fd6bc" class="m-doc">bad_data</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a2dd381e68c359288f79ce66ff41f89ad" class="m-doc">bad_data_size</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a591752eab0d87a9f533e7218ba2a1c8d" class="m-doc">connection_problem</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a484d86f99895aef706acd86920a83e1f" class="m-doc">bad_exception</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a6002e1d4b262dce812d9bf719cbd5f92" class="m-doc">no_exception</a>,
+              <a href="#a83bcd14bc37234b1d4bd5db869ec7046a2ffe4e77325d9a7152f7086ea7aa5114" class="m-doc">max</a> }</span>
+            </dt>
+            <dd>is a strongly typed enum class representing the exception of Modbus and internal lib</dd>
+          </dl>
+        </section>
+        <section id="var-members">
+          <h2><a href="#var-members">Variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a3ef154190d6d6e982da2a1cfa222e820">
+              static std::uint16_t <a href="#a3ef154190d6d6e982da2a1cfa222e820" class="m-doc-self">max_adu_length</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2f8808c7bd7817d12c1aa4417d1f5411">
+              static std::uint16_t <a href="#a2f8808c7bd7817d12c1aa4417d1f5411" class="m-doc-self">tcp_protocol</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1c5cbbe192e86340f539a9d65e5905b1">
+              static std::uint16_t <a href="#a1c5cbbe192e86340f539a9d65e5905b1" class="m-doc-self">max_num_bits_read</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad8262204b9896001c8cb3438413b96b2">
+              static std::uint16_t <a href="#ad8262204b9896001c8cb3438413b96b2" class="m-doc-self">max_num_regs_read</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aae902a930aebaa893f41976fbfcb5571">
+              static std::uint16_t <a href="#aae902a930aebaa893f41976fbfcb5571" class="m-doc-self">max_num_bits_write</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a971e643a778c997f21ac188ed76ef660">
+              static std::uint16_t <a href="#a971e643a778c997f21ac188ed76ef660" class="m-doc-self">max_num_regs_write</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2b6623658ae9f8f774e078ab7145e2de">
+              static std::uint16_t <a href="#a2b6623658ae9f8f774e078ab7145e2de" class="m-doc-self">max_address</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="a966ff53f9a39377947d4be2da162b024"><div>
+            <h3>
+              enum class modbus::<wbr />constants::<wbr /><a href="#a966ff53f9a39377947d4be2da162b024" class="m-doc-self">function_code</a>: std::uint8_t
+            </h3>
+            <p>is a strongly typed enum class representing the function of Modbus</p>
+<aside class="m-note m-default"><h4>Author</h4><p>Ray Andrew</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a83bcd14bc37234b1d4bd5db869ec7046"><div>
+            <h3>
+              enum class modbus::<wbr />constants::<wbr /><a href="#a83bcd14bc37234b1d4bd5db869ec7046" class="m-doc-self">exception_code</a>: std::uint8_t
+            </h3>
+            <p>is a strongly typed enum class representing the exception of Modbus and internal lib</p>
+<aside class="m-note m-default"><h4>Author</h4><p>Ray Andrew</p></aside>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046ad8bd79cc131920d5de426f914d17405a" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046ad8bd79cc131920d5de426f914d17405a">min</a></td>
+                  <td>
+<p>helper for checking modbus::exception value</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046aa08a5996592e861abd887093c5268f16" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046aa08a5996592e861abd887093c5268f16">illegal_function</a></td>
+                  <td>
+<p>modbus exception</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a1e0042b2a5660751f5ddbaa4b6921588" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a1e0042b2a5660751f5ddbaa4b6921588">illegal_data_address</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046aeb335287c4f00edeed4f1ea2a9c53e21" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046aeb335287c4f00edeed4f1ea2a9c53e21">illegal_data_value</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a08c43362b5edf0850adf61c2ad8b03c3" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a08c43362b5edf0850adf61c2ad8b03c3">server_device_failure</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a7daca0569890410155f9fbb480e40e88" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a7daca0569890410155f9fbb480e40e88">acknowledge</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a249a4208fc60c6a5824fcde1e92ed6a5" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a249a4208fc60c6a5824fcde1e92ed6a5">server_device_busy</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046afe88011e32129bc3a13597c617dd3d73" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046afe88011e32129bc3a13597c617dd3d73">negative_acknowledge</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046acddec642c1143ee9c852a5f23fb246df" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046acddec642c1143ee9c852a5f23fb246df">memory_parity_error</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046af31ee5e3824f1f5e5d206bdf3029f22b" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046af31ee5e3824f1f5e5d206bdf3029f22b">undef</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a47b950fd0d1b8f16552721f817836248" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a47b950fd0d1b8f16552721f817836248">gateway_path_unavailable</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a17a85951e5f2e1d2ae4934cc9eccb3fc" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a17a85951e5f2e1d2ae4934cc9eccb3fc">gateway_target_device_failed_to_respond</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a9328cf8e53ae6c84c8d36ae8b07fd6bc" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a9328cf8e53ae6c84c8d36ae8b07fd6bc">bad_data</a></td>
+                  <td>
+<p>Internal exception</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a2dd381e68c359288f79ce66ff41f89ad" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a2dd381e68c359288f79ce66ff41f89ad">bad_data_size</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a591752eab0d87a9f533e7218ba2a1c8d" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a591752eab0d87a9f533e7218ba2a1c8d">connection_problem</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a484d86f99895aef706acd86920a83e1f" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a484d86f99895aef706acd86920a83e1f">bad_exception</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a6002e1d4b262dce812d9bf719cbd5f92" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a6002e1d4b262dce812d9bf719cbd5f92">no_exception</a></td>
+                  <td>
+<p>helper</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a83bcd14bc37234b1d4bd5db869ec7046a2ffe4e77325d9a7152f7086ea7aa5114" class="m-doc-self" id="a83bcd14bc37234b1d4bd5db869ec7046a2ffe4e77325d9a7152f7086ea7aa5114">max</a></td>
+                  <td>
+                  <p><span></span></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>modbuscpp. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>modbus::internal::adu class | modbuscpp</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">modbuscpp</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="pages.html">Pages</a>
+              <ol>
+                <li><a href="about.html">About</a></li>
+              </ol>
+            </li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacemodbus.html">modbus</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacemodbus_1_1internal.html">internal</a>::<wbr/></span>adu <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="adu_8hpp.html">&lt;modbuscpp/details/adu.hpp&gt;</a></div>
+        </h1>
+        <p>ADU base class.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-static-methods">Protected static functions</a></li>
+                <li><a href="#pro-methods">Protected functions</a></li>
+                <li><a href="#pro-static-attribs">Protected static variables</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#friends">Friends</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<aside class="m-note m-default"><h4>Author</h4><p>Ray Andrew /</p></aside><p>ADU structure for TCP:</p><ul><li>Header (7 bytes) &mdash; Transaction (2 bytes) &mdash; Protocol (2 bytes) &mdash; Length (2 bytes) [ unit identifier + PDU ] &mdash; Unit (1 byte)</li><li>PDU &mdash; Function (1 byte) &mdash; Rest of data... (N byte)</li></ul>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classmodbus_1_1internal_1_1request.html" class="m-doc">request</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              class <a href="classmodbus_1_1internal_1_1response.html" class="m-doc">response</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="structmodbus_1_1internal_1_1adu_1_1initializer__t.html" class="m-doc">initializer_t</a>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-static-attribs">
+          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              static packet_t::size_type <a href="#aa0d5b3d3411d899de1ee6864ee3b7a1d" class="m-doc">header_length</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a258bafce60a84111ed90dab3cb1b6074" class="m-doc">adu</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af9e35c1bc1018796ac98e17ca0dc9362" class="m-doc">adu</a>(</span><span class="m-doc-wrap">std::uint8_t function_code,
+              std::uint16_t transaction = 0x00,
+              std::uint8_t unit = 0x00) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ab26fb5cd9b0cbdc4030419ecbad834e8" class="m-doc">adu</a>(</span><span class="m-doc-wrap"><a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function,
+              std::uint16_t transaction = 0x00,
+              std::uint8_t unit = 0x00) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a2c011c1fa269fb274fc5ca6602ece43f" class="m-doc">adu</a>(</span><span class="m-doc-wrap">std::uint8_t function_code,
+              const <a href="structmodbus_1_1internal_1_1adu_1_1initializer__t.html" class="m-doc">initializer_<wbr />t</a>&amp; initializer) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#af72621bf7ea1423cec291e86be208187" class="m-doc">adu</a>(</span><span class="m-doc-wrap"><a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function,
+              const <a href="structmodbus_1_1internal_1_1adu_1_1initializer__t.html" class="m-doc">initializer_<wbr />t</a>&amp; initializer) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aa6a1f6e51837175b558d365a0783df9c" class="m-doc">adu</a>(</span><span class="m-doc-wrap">std::uint8_t function_code,
+              const <a href="structmodbus_1_1header__t.html" class="m-doc">header_<wbr />t</a>&amp; m_header) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4e5be0c2db516a6f726eb51729f9d642" class="m-doc">adu</a>(</span><span class="m-doc-wrap"><a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function,
+              const <a href="structmodbus_1_1header__t.html" class="m-doc">header_<wbr />t</a>&amp; m_header) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9de20c1ddc31813be5833ab86eda0fd0" class="m-doc">encode</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a9a14f857d721c0e8de80354e9941a9e8" class="m-doc">decode</a>(</span><span class="m-doc-wrap">std::string_view packet) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a6f1a4a8dfdd1b22eaa5b755d6ef5f502" class="m-doc">decode</a>(</span><span class="m-doc-wrap">const <a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a>&amp; packet) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aca62b31e5061d6c15979b19faf4bb786" class="m-doc">function</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae4e10fb3c95ffa90e41a7f10592c010a" class="m-doc">transaction</a>(</span><span class="m-doc-wrap">) const -&gt; std::uint16_t</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7d6074c3f8e994fd7c2d3654e7115be0" class="m-doc">length</a>(</span><span class="m-doc-wrap">) const -&gt; std::uint16_t</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaca534ca12a4135aa2ee86c1c0a81795" class="m-doc">unit</a>(</span><span class="m-doc-wrap">) const -&gt; std::uint8_t</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a452e334596940cad76a7b30da7b21df0" class="m-doc">header</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="structmodbus_1_1header__t.html" class="m-doc">header_<wbr />t</a></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aac1823e7bd58c0e0776a660c29ee1cb8" class="m-doc">initialize</a>(</span><span class="m-doc-wrap">const <a href="structmodbus_1_1internal_1_1adu_1_1initializer__t.html" class="m-doc">initializer_<wbr />t</a>&amp; initializer) -&gt; <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6d448d502d01a65eb2075f74d1593623" class="m-doc">header</a>(</span><span class="m-doc-wrap">const <a href="structmodbus_1_1header__t.html" class="m-doc">header_<wbr />t</a>&amp; m_header) -&gt; <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4685e9233459f07f0e376c12bd486896" class="m-doc">transaction</a>(</span><span class="m-doc-wrap">std::uint16_t new_transaction) -&gt; <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a16a3bc189a381ec0c62bda68e689362a" class="m-doc">calc_length</a>(</span><span class="m-doc-wrap">std::uint16_t pdu_length) -&gt; <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8491d6fb4f42cfeac2f6fdba606a81dd" class="m-doc">length</a>(</span><span class="m-doc-wrap">std::uint16_t new_length) -&gt; <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a785a25f40667b847108b31119bc1c73b" class="m-doc">unit</a>(</span><span class="m-doc-wrap">std::uint8_t new_unit) -&gt; <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a188e66702255355446187a8ec2bebc5b" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; other) const -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4383065676c657c575d0294c8cf3a40d" class="m-doc">operator&lt;</a>(</span><span class="m-doc-wrap">const <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; other) const -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a17439232e2d0c0239abca6586578f805" class="m-doc">operator&gt;</a>(</span><span class="m-doc-wrap">const <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; other) const -&gt; bool</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5f15c6aa65ccba9e9bd7cc4ab52eb085" class="m-doc">dump</a>(</span><span class="m-doc-wrap">std::ostream&amp; os) const -&gt; std::ostream&amp; <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pro-static-methods">
+          <h2><a href="#pro-static-methods">Protected static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a5c980ae4ab0e58c90ef1a2de9239033d" class="m-doc">calc_adu_length</a>(</span><span class="m-doc-wrap">std::uint16_t data_length) -&gt; std::uint16_t <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pro-methods">
+          <h2><a href="#pro-methods">Protected functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a25629208fe05021c80020fb2b15ea71f" class="m-doc">decode_header</a>(</span><span class="m-doc-wrap">const <a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a>&amp; packet)</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a56ea71b34ec9b730fbdd545cfbbb3d73" class="m-doc">header_packet</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pro-static-attribs">
+          <h2><a href="#pro-static-attribs">Protected static variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              static std::uint16_t <a href="#a6b43bcc37fa8f4bfd956e44f14558fb0" class="m-doc">protocol</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              static packet_t::size_type <a href="#a5711f8c32fd7c979048867a3f3384ee0" class="m-doc">length_idx</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              static packet_t::size_type <a href="#a2bf6458d6226a0b37b1e746ccfd59774" class="m-doc">max_length</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              static packet_t::size_type <a href="#a01d421493c0cd5ae26d2960847b97965" class="m-doc">max_pdu_size</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              static std::string_view <a href="#a863c43db05faacfcde73345d6fd6a642" class="m-doc">header_func_format</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> <a href="#a0f375c2b0d7a03030b74d7d1290f05c9" class="m-doc">function_</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              std::underlying_type_t&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a>&gt; <a href="#abff20f13104a5fd444ea2897e3bdb9e9" class="m-doc">function_code_</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              std::uint16_t <a href="#af082f88bafe9d67bcd8c4667a80e9adc" class="m-doc">transaction_</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              std::uint16_t <a href="#a7e24107b231d241970a90f61a7c7c927" class="m-doc">length_</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              std::uint8_t <a href="#a9bb4ba58474d88655c6243e74bcb889e" class="m-doc">unit_</a>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="friends">
+          <h2><a href="#friends">Friends</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename ostream&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad4de538f65d64d2d70104853b6176612" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">ostream&amp; os,
+              const <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; obj) -&gt; ostream&amp;</span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a258bafce60a84111ed90dab3cb1b6074"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a258bafce60a84111ed90dab3cb1b6074" class="m-doc-self">adu</a>(</span><span class="m-doc-wrap">) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+<p>ADU constructor</p>
+          </div></section>
+          <section class="m-doc-details" id="af9e35c1bc1018796ac98e17ca0dc9362"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af9e35c1bc1018796ac98e17ca0dc9362" class="m-doc-self">adu</a>(</span><span class="m-doc-wrap">std::uint8_t function_code,
+              std::uint16_t transaction = 0x00,
+              std::uint8_t unit = 0x00) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">function_code</td>
+                  <td>modbus function code</td>
+                </tr>
+                <tr>
+                  <td>transaction</td>
+                  <td>transaction id</td>
+                </tr>
+                <tr>
+                  <td>unit</td>
+                  <td>unit id</td>
+                </tr>
+              </tbody>
+            </table>
+<p>ADU constructor</p>
+          </div></section>
+          <section class="m-doc-details" id="ab26fb5cd9b0cbdc4030419ecbad834e8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab26fb5cd9b0cbdc4030419ecbad834e8" class="m-doc-self">adu</a>(</span><span class="m-doc-wrap"><a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function,
+              std::uint16_t transaction = 0x00,
+              std::uint8_t unit = 0x00) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">function</td>
+                  <td>modbus function</td>
+                </tr>
+                <tr>
+                  <td>transaction</td>
+                  <td>transaction id</td>
+                </tr>
+                <tr>
+                  <td>unit</td>
+                  <td>unit id</td>
+                </tr>
+              </tbody>
+            </table>
+<p>ADU constructor</p>
+          </div></section>
+          <section class="m-doc-details" id="a2c011c1fa269fb274fc5ca6602ece43f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2c011c1fa269fb274fc5ca6602ece43f" class="m-doc-self">adu</a>(</span><span class="m-doc-wrap">std::uint8_t function_code,
+              const <a href="structmodbus_1_1internal_1_1adu_1_1initializer__t.html" class="m-doc">initializer_<wbr />t</a>&amp; initializer) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">function_code</td>
+                  <td>modbus function code</td>
+                </tr>
+                <tr>
+                  <td>initializer</td>
+                  <td>initializer</td>
+                </tr>
+              </tbody>
+            </table>
+<p>ADU constructor</p>
+          </div></section>
+          <section class="m-doc-details" id="af72621bf7ea1423cec291e86be208187"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af72621bf7ea1423cec291e86be208187" class="m-doc-self">adu</a>(</span><span class="m-doc-wrap"><a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function,
+              const <a href="structmodbus_1_1internal_1_1adu_1_1initializer__t.html" class="m-doc">initializer_<wbr />t</a>&amp; initializer) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">function</td>
+                  <td>modbus function</td>
+                </tr>
+                <tr>
+                  <td>initializer</td>
+                  <td>initializer</td>
+                </tr>
+              </tbody>
+            </table>
+<p>ADU constructor</p>
+          </div></section>
+          <section class="m-doc-details" id="aa6a1f6e51837175b558d365a0783df9c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa6a1f6e51837175b558d365a0783df9c" class="m-doc-self">adu</a>(</span><span class="m-doc-wrap">std::uint8_t function_code,
+              const <a href="structmodbus_1_1header__t.html" class="m-doc">header_<wbr />t</a>&amp; m_header) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">function_code</td>
+                  <td>modbus function code</td>
+                </tr>
+                <tr>
+                  <td>m_header</td>
+                  <td>header struct</td>
+                </tr>
+              </tbody>
+            </table>
+<p>ADU constructor</p>
+          </div></section>
+          <section class="m-doc-details" id="a4e5be0c2db516a6f726eb51729f9d642"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4e5be0c2db516a6f726eb51729f9d642" class="m-doc-self">adu</a>(</span><span class="m-doc-wrap"><a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function,
+              const <a href="structmodbus_1_1header__t.html" class="m-doc">header_<wbr />t</a>&amp; m_header) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">function</td>
+                  <td>modbus function</td>
+                </tr>
+                <tr>
+                  <td>m_header</td>
+                  <td>header struct</td>
+                </tr>
+              </tbody>
+            </table>
+<p>ADU constructor</p>
+          </div></section>
+          <section class="m-doc-details" id="a9de20c1ddc31813be5833ab86eda0fd0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a> modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9de20c1ddc31813be5833ab86eda0fd0" class="m-doc-self">encode</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>packet that has been encoded</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Encode packet</p>
+          </div></section>
+          <section class="m-doc-details" id="a9a14f857d721c0e8de80354e9941a9e8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9a14f857d721c0e8de80354e9941a9e8" class="m-doc-self">decode</a>(</span><span class="m-doc-wrap">std::string_view packet) <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">packet</td>
+                  <td>packet to be decoded</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Decode packet</p>
+          </div></section>
+          <section class="m-doc-details" id="a6f1a4a8dfdd1b22eaa5b755d6ef5f502"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f1a4a8dfdd1b22eaa5b755d6ef5f502" class="m-doc-self">decode</a>(</span><span class="m-doc-wrap">const <a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a>&amp; packet) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">packet</td>
+                  <td>packet to be decoded</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Decode packet</p>
+          </div></section>
+          <section class="m-doc-details" id="aca62b31e5061d6c15979b19faf4bb786"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca62b31e5061d6c15979b19faf4bb786" class="m-doc-self">function</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>function code</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Getter Get function code</p>
+          </div></section>
+          <section class="m-doc-details" id="ae4e10fb3c95ffa90e41a7f10592c010a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::uint16_t modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae4e10fb3c95ffa90e41a7f10592c010a" class="m-doc-self">transaction</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>transaction id</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Get transaction id</p>
+          </div></section>
+          <section class="m-doc-details" id="a7d6074c3f8e994fd7c2d3654e7115be0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::uint16_t modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d6074c3f8e994fd7c2d3654e7115be0" class="m-doc-self">length</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>length</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Get length</p>
+          </div></section>
+          <section class="m-doc-details" id="aaca534ca12a4135aa2ee86c1c0a81795"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::uint8_t modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaca534ca12a4135aa2ee86c1c0a81795" class="m-doc-self">unit</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>unit id</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Get unit id</p>
+          </div></section>
+          <section class="m-doc-details" id="a452e334596940cad76a7b30da7b21df0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="structmodbus_1_1header__t.html" class="m-doc">header_<wbr />t</a> modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a452e334596940cad76a7b30da7b21df0" class="m-doc-self">header</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>header</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Get header</p>
+          </div></section>
+          <section class="m-doc-details" id="aac1823e7bd58c0e0776a660c29ee1cb8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aac1823e7bd58c0e0776a660c29ee1cb8" class="m-doc-self">initialize</a>(</span><span class="m-doc-wrap">const <a href="structmodbus_1_1internal_1_1adu_1_1initializer__t.html" class="m-doc">initializer_<wbr />t</a>&amp; initializer)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">initializer</td>
+                  <td>initializer</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>instance of ADU</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Setter Iniitalize ADU</p>
+          </div></section>
+          <section class="m-doc-details" id="a6d448d502d01a65eb2075f74d1593623"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d448d502d01a65eb2075f74d1593623" class="m-doc-self">header</a>(</span><span class="m-doc-wrap">const <a href="structmodbus_1_1header__t.html" class="m-doc">header_<wbr />t</a>&amp; m_header)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">m_header</td>
+                  <td>header struct</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>instance of ADU</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Set header</p>
+          </div></section>
+          <section class="m-doc-details" id="a4685e9233459f07f0e376c12bd486896"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4685e9233459f07f0e376c12bd486896" class="m-doc-self">transaction</a>(</span><span class="m-doc-wrap">std::uint16_t new_transaction)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">new_transaction</td>
+                  <td>new transaction id</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>instance of ADU</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Set transaction id</p>
+          </div></section>
+          <section class="m-doc-details" id="a16a3bc189a381ec0c62bda68e689362a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a16a3bc189a381ec0c62bda68e689362a" class="m-doc-self">calc_length</a>(</span><span class="m-doc-wrap">std::uint16_t pdu_length)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">pdu_length</td>
+                  <td>PDU length</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>instance of ADU</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Calculate length of ADU given PDU length</p>
+          </div></section>
+          <section class="m-doc-details" id="a8491d6fb4f42cfeac2f6fdba606a81dd"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8491d6fb4f42cfeac2f6fdba606a81dd" class="m-doc-self">length</a>(</span><span class="m-doc-wrap">std::uint16_t new_length)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">new_length</td>
+                  <td>new length</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>instance of ADU</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Set length of ADU</p>
+          </div></section>
+          <section class="m-doc-details" id="a785a25f40667b847108b31119bc1c73b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a785a25f40667b847108b31119bc1c73b" class="m-doc-self">unit</a>(</span><span class="m-doc-wrap">std::uint8_t new_unit)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">new_unit</td>
+                  <td>new unit id</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>instance of ADU</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Set unit id</p>
+          </div></section>
+          <section class="m-doc-details" id="a188e66702255355446187a8ec2bebc5b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a188e66702255355446187a8ec2bebc5b" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; other) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>other ADU</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>true if transaction_id is equal to other transaction_id</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Operator Equality operator</p>
+          </div></section>
+          <section class="m-doc-details" id="a4383065676c657c575d0294c8cf3a40d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4383065676c657c575d0294c8cf3a40d" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap">const <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; other) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>other ADU</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>true if transaction_id is less than other transaction_id</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Less-than operator</p>
+          </div></section>
+          <section class="m-doc-details" id="a17439232e2d0c0239abca6586578f805"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17439232e2d0c0239abca6586578f805" class="m-doc-self">operator&gt;</a>(</span><span class="m-doc-wrap">const <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; other) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>other ADU</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>true if transaction_id is more than other transaction_id</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>More-than operator</p>
+          </div></section>
+          <section class="m-doc-details" id="a5f15c6aa65ccba9e9bd7cc4ab52eb085"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::ostream&amp; modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5f15c6aa65ccba9e9bd7cc4ab52eb085" class="m-doc-self">dump</a>(</span><span class="m-doc-wrap">std::ostream&amp; os) const <span class="m-label m-warning">virtual</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">os</td>
+                  <td>ostream</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>ostream</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Dump to string</p>
+          </div></section>
+          <section class="m-doc-details" id="a5c980ae4ab0e58c90ef1a2de9239033d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static std::uint16_t modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5c980ae4ab0e58c90ef1a2de9239033d" class="m-doc-self">calc_adu_length</a>(</span><span class="m-doc-wrap">std::uint16_t data_length) <span class="m-label m-warning">protected</span> <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>ADU length</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Response size</p><p>header_length (containing unit_id) + 1 (function) + data_length</p>
+          </div></section>
+          <section class="m-doc-details" id="a25629208fe05021c80020fb2b15ea71f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a25629208fe05021c80020fb2b15ea71f" class="m-doc-self">decode_header</a>(</span><span class="m-doc-wrap">const <a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a>&amp; packet) <span class="m-label m-warning">protected</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">packet</td>
+                  <td>packet to be decoded</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>instance of ADU</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Decode packet header</p>
+          </div></section>
+          <section class="m-doc-details" id="a56ea71b34ec9b730fbdd545cfbbb3d73"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a> modbus::<wbr />internal::<wbr />adu::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a56ea71b34ec9b730fbdd545cfbbb3d73" class="m-doc-self">header_packet</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">protected</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>packet consists of header</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Get header packet</p>
+          </div></section>
+          <section class="m-doc-details" id="ad4de538f65d64d2d70104853b6176612"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename ostream&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">ostream&amp; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad4de538f65d64d2d70104853b6176612" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">ostream&amp; os,
+              const <a href="classmodbus_1_1internal_1_1adu.html" class="m-doc">adu</a>&amp; obj)</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">os</td>
+                  <td>ostream</td>
+                </tr>
+                <tr>
+                  <td>obj</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>stream</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Ostream operator</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Variable documentation</h2>
+          <section class="m-doc-details" id="aa0d5b3d3411d899de1ee6864ee3b7a1d"><div>
+            <h3>
+              static packet_t::size_type modbus::<wbr />internal::<wbr />adu::<wbr /><a href="#aa0d5b3d3411d899de1ee6864ee3b7a1d" class="m-doc-self">header_length</a> <span class="m-label m-primary">constexpr</span>
+            </h3>
+<p>Header length</p>
+          </div></section>
+          <section class="m-doc-details" id="a6b43bcc37fa8f4bfd956e44f14558fb0"><div>
+            <h3>
+              static std::uint16_t modbus::<wbr />internal::<wbr />adu::<wbr /><a href="#a6b43bcc37fa8f4bfd956e44f14558fb0" class="m-doc-self">protocol</a> <span class="m-label m-warning">protected</span> <span class="m-label m-primary">constexpr</span>
+            </h3>
+<p>Protocol ID</p>
+          </div></section>
+          <section class="m-doc-details" id="a5711f8c32fd7c979048867a3f3384ee0"><div>
+            <h3>
+              static packet_t::size_type modbus::<wbr />internal::<wbr />adu::<wbr /><a href="#a5711f8c32fd7c979048867a3f3384ee0" class="m-doc-self">length_idx</a> <span class="m-label m-warning">protected</span> <span class="m-label m-primary">constexpr</span>
+            </h3>
+<p>Length index</p>
+          </div></section>
+          <section class="m-doc-details" id="a2bf6458d6226a0b37b1e746ccfd59774"><div>
+            <h3>
+              static packet_t::size_type modbus::<wbr />internal::<wbr />adu::<wbr /><a href="#a2bf6458d6226a0b37b1e746ccfd59774" class="m-doc-self">max_length</a> <span class="m-label m-warning">protected</span> <span class="m-label m-primary">constexpr</span>
+            </h3>
+<p>Max length</p>
+          </div></section>
+          <section class="m-doc-details" id="a01d421493c0cd5ae26d2960847b97965"><div>
+            <h3>
+              static packet_t::size_type modbus::<wbr />internal::<wbr />adu::<wbr /><a href="#a01d421493c0cd5ae26d2960847b97965" class="m-doc-self">max_pdu_size</a> <span class="m-label m-warning">protected</span> <span class="m-label m-primary">constexpr</span>
+            </h3>
+<p>Max PDU length</p>
+          </div></section>
+          <section class="m-doc-details" id="a863c43db05faacfcde73345d6fd6a642"><div>
+            <h3>
+              static std::string_view modbus::<wbr />internal::<wbr />adu::<wbr /><a href="#a863c43db05faacfcde73345d6fd6a642" class="m-doc-self">header_func_format</a> <span class="m-label m-warning">protected</span> <span class="m-label m-primary">constexpr</span>
+            </h3>
+<p>Header struct with function format</p>
+          </div></section>
+          <section class="m-doc-details" id="a0f375c2b0d7a03030b74d7d1290f05c9"><div>
+            <h3>
+              <a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> modbus::<wbr />internal::<wbr />adu::<wbr /><a href="#a0f375c2b0d7a03030b74d7d1290f05c9" class="m-doc-self">function_</a> <span class="m-label m-warning">protected</span>
+            </h3>
+<p>Function</p>
+          </div></section>
+          <section class="m-doc-details" id="abff20f13104a5fd444ea2897e3bdb9e9"><div>
+            <h3>
+              std::underlying_type_t&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a>&gt; modbus::<wbr />internal::<wbr />adu::<wbr /><a href="#abff20f13104a5fd444ea2897e3bdb9e9" class="m-doc-self">function_code_</a> <span class="m-label m-warning">protected</span>
+            </h3>
+<p>Function code</p>
+          </div></section>
+          <section class="m-doc-details" id="af082f88bafe9d67bcd8c4667a80e9adc"><div>
+            <h3>
+              std::uint16_t modbus::<wbr />internal::<wbr />adu::<wbr /><a href="#af082f88bafe9d67bcd8c4667a80e9adc" class="m-doc-self">transaction_</a> <span class="m-label m-warning">protected</span>
+            </h3>
+<p>Transaction id</p>
+          </div></section>
+          <section class="m-doc-details" id="a7e24107b231d241970a90f61a7c7c927"><div>
+            <h3>
+              std::uint16_t modbus::<wbr />internal::<wbr />adu::<wbr /><a href="#a7e24107b231d241970a90f61a7c7c927" class="m-doc-self">length_</a> <span class="m-label m-warning">protected</span>
+            </h3>
+<p>Length of packet [ unit identifier + PDU ]</p>
+          </div></section>
+          <section class="m-doc-details" id="a9bb4ba58474d88655c6243e74bcb889e"><div>
+            <h3>
+              std::uint8_t modbus::<wbr />internal::<wbr />adu::<wbr /><a href="#a9bb4ba58474d88655c6243e74bcb889e" class="m-doc-self">unit_</a> <span class="m-label m-warning">protected</span>
+            </h3>
+<p>Unit id</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>modbuscpp. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

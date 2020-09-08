@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>modbus::request::base_read_registers class | modbuscpp</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">modbuscpp</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="pages.html">Pages</a>
+              <ol>
+                <li><a href="about.html">About</a></li>
+              </ol>
+            </li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="register-read_8hpp.html">&lt;modbuscpp/details/register-read.hpp&gt;</a></div>
+          <div class="m-doc-template">template&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function_code&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacemodbus.html">modbus</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacemodbus_1_1request.html">request</a>::<wbr/></span>base_read_registers <span class="m-thin">class</span>
+        </h1>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>base request read registers class</p><aside class="m-note m-default"><h4>Author</h4><p>Ray Andrew</p></aside><aside class="m-note m-default"><h4>Date</h4><p>August 2020</p></aside><p>Encode, decode, and execute read registers request</p><p>Structure : [ (Header...) ] [ Function (1 byte) ] [ Starting Address (2 bytes) ] [ Quantity of registers (2 bytes) ]</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classmodbus_1_1internal_1_1request.html" class="m-doc">modbus::internal::request</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aaafbd62112cfbc9818abafb52cfd3171" class="m-doc">base_read_registers</a>(</span><span class="m-doc-wrap">const <a href="namespacemodbus.html#a4638def076c40e1c68a20bccafaa9c0a" class="m-doc">address_<wbr />t</a>&amp; address = <a href="namespacemodbus.html#a4638def076c40e1c68a20bccafaa9c0a" class="m-doc">address_<wbr />t</a>{},
+              const <a href="namespacemodbus.html#ac3a92b94ff66b41523230dca8702cc0d" class="m-doc">read_<wbr />num_<wbr />regs_<wbr />t</a>&amp; count = <a href="namespacemodbus.html#ac3a92b94ff66b41523230dca8702cc0d" class="m-doc">read_<wbr />num_<wbr />regs_<wbr />t</a>{}) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa5263eb83e4c5ee575b3e07250d261af" class="m-doc">encode</a>(</span><span class="m-doc-wrap">) -&gt; <a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a6e8cea7c4ffb5ee5e3cc61a6f97494ca" class="m-doc">decode</a>(</span><span class="m-doc-wrap">const <a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a>&amp; data) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7fac3646956e6fe84a0165827b2b6fc6" class="m-doc">execute</a>(</span><span class="m-doc-wrap"><a href="classmodbus_1_1table.html" class="m-doc">table</a>* data_table) -&gt; <a href="classmodbus_1_1internal_1_1response.html#af1cb0997afbb3719f0817a56aac98f04" class="m-doc">internal::<wbr />response::<wbr />pointer</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a842b3a48298187871ed470ca8424406c" class="m-doc">byte_count</a>(</span><span class="m-doc-wrap">) const -&gt; std::uint16_t</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aba12ac06d8674a77a611edf42fbfaef3" class="m-doc">response_size</a>(</span><span class="m-doc-wrap">) const -&gt; packet_t::size_type <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1a2dfa33a0b31ba014b8791bfbfb9cd6" class="m-doc">address</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="namespacemodbus.html#a4638def076c40e1c68a20bccafaa9c0a" class="m-doc">address_<wbr />t</a>&amp;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad95e3d4d11b2bdf96278192e6a63c555" class="m-doc">count</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="namespacemodbus.html#ac3a92b94ff66b41523230dca8702cc0d" class="m-doc">read_<wbr />num_<wbr />regs_<wbr />t</a>&amp;</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a947997ba44dfbfa2e26cfb87550ca472" class="m-doc">dump</a>(</span><span class="m-doc-wrap">std::ostream&amp; os) const -&gt; std::ostream&amp; <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aaafbd62112cfbc9818abafb52cfd3171"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function_code&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> modbus::<wbr />request::<wbr />base_read_registers&lt;function_code&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaafbd62112cfbc9818abafb52cfd3171" class="m-doc-self">base_read_registers</a>(</span><span class="m-doc-wrap">const <a href="namespacemodbus.html#a4638def076c40e1c68a20bccafaa9c0a" class="m-doc">address_<wbr />t</a>&amp; address = <a href="namespacemodbus.html#a4638def076c40e1c68a20bccafaa9c0a" class="m-doc">address_<wbr />t</a>{},
+              const <a href="namespacemodbus.html#ac3a92b94ff66b41523230dca8702cc0d" class="m-doc">read_<wbr />num_<wbr />regs_<wbr />t</a>&amp; count = <a href="namespacemodbus.html#ac3a92b94ff66b41523230dca8702cc0d" class="m-doc">read_<wbr />num_<wbr />regs_<wbr />t</a>{}) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">address</td>
+                  <td>address requested</td>
+                </tr>
+                <tr>
+                  <td>count</td>
+                  <td>count requested</td>
+                </tr>
+              </tbody>
+            </table>
+<p><a href="classmodbus_1_1request_1_1base__read__registers.html" class="m-doc">request::<wbr />base_read_registers</a> constructor</p>
+          </div></section>
+          <section class="m-doc-details" id="aa5263eb83e4c5ee575b3e07250d261af"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function_code&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a> modbus::<wbr />request::<wbr />base_read_registers&lt;function_code&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa5263eb83e4c5ee575b3e07250d261af" class="m-doc-self">encode</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>packet format</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Encode read registers packet from given data</p>
+          </div></section>
+          <section class="m-doc-details" id="a6e8cea7c4ffb5ee5e3cc61a6f97494ca"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function_code&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void modbus::<wbr />request::<wbr />base_read_registers&lt;function_code&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6e8cea7c4ffb5ee5e3cc61a6f97494ca" class="m-doc-self">decode</a>(</span><span class="m-doc-wrap">const <a href="namespacemodbus.html#a18a4bebaaaa405eb9a5ec13283b0ba36" class="m-doc">packet_<wbr />t</a>&amp; data) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">data</td>
+                  <td>data to be appended</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>packet format</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Decode read registers packet</p>
+          </div></section>
+          <section class="m-doc-details" id="a7fac3646956e6fe84a0165827b2b6fc6"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function_code&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classmodbus_1_1internal_1_1response.html#af1cb0997afbb3719f0817a56aac98f04" class="m-doc">internal::<wbr />response::<wbr />pointer</a> modbus::<wbr />request::<wbr />base_read_registers&lt;function_code&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7fac3646956e6fe84a0165827b2b6fc6" class="m-doc-self">execute</a>(</span><span class="m-doc-wrap"><a href="classmodbus_1_1table.html" class="m-doc">table</a>* data_table) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>packet format</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Encode read registers packet</p>
+          </div></section>
+          <section class="m-doc-details" id="a842b3a48298187871ed470ca8424406c"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function_code&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::uint16_t modbus::<wbr />request::<wbr />base_read_registers&lt;function_code&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a842b3a48298187871ed470ca8424406c" class="m-doc-self">byte_count</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>byte count</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Byte count</p>
+          </div></section>
+          <section class="m-doc-details" id="aba12ac06d8674a77a611edf42fbfaef3"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function_code&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">packet_t::size_type modbus::<wbr />request::<wbr />base_read_registers&lt;function_code&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aba12ac06d8674a77a611edf42fbfaef3" class="m-doc-self">response_size</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>response size</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Get response size for error checking on client</p>
+          </div></section>
+          <section class="m-doc-details" id="a1a2dfa33a0b31ba014b8791bfbfb9cd6"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function_code&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">const <a href="namespacemodbus.html#a4638def076c40e1c68a20bccafaa9c0a" class="m-doc">address_<wbr />t</a>&amp; modbus::<wbr />request::<wbr />base_read_registers&lt;function_code&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1a2dfa33a0b31ba014b8791bfbfb9cd6" class="m-doc-self">address</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>address</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Get address</p>
+          </div></section>
+          <section class="m-doc-details" id="ad95e3d4d11b2bdf96278192e6a63c555"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function_code&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">const <a href="namespacemodbus.html#ac3a92b94ff66b41523230dca8702cc0d" class="m-doc">read_<wbr />num_<wbr />regs_<wbr />t</a>&amp; modbus::<wbr />request::<wbr />base_read_registers&lt;function_code&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad95e3d4d11b2bdf96278192e6a63c555" class="m-doc-self">count</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>count</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Get count</p>
+          </div></section>
+          <section class="m-doc-details" id="a947997ba44dfbfa2e26cfb87550ca472"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;<a href="namespacemodbus_1_1constants.html#a966ff53f9a39377947d4be2da162b024" class="m-doc">constants::<wbr />function_code</a> function_code&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::ostream&amp; modbus::<wbr />request::<wbr />base_read_registers&lt;function_code&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a947997ba44dfbfa2e26cfb87550ca472" class="m-doc-self">dump</a>(</span><span class="m-doc-wrap">std::ostream&amp; os) const <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">os</td>
+                  <td>ostream</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>ostream</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Dump to string</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>modbuscpp. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
