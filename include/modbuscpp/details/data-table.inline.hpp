@@ -78,8 +78,12 @@ inline bool
 base<base_container_t, data_t, read_count_t, write_count_t>::validate_sz(
     const address_t& address,
     size_type        count) const {
-  return (starting_address() <= address) &&
-         ((starting_address_() + capacity()) >= (address() + count));
+  if (count > 0) {
+    return (starting_address() <= address)
+           && ((starting_address_() + capacity()) >= (address() + count));
+  }
+
+  throw ex::out_of_range("Count is not valid");
 }
 
 /** sequential block */
@@ -111,23 +115,48 @@ inline sequential<data_t, read_count_t, write_count_t>::sequential(
                                                              container} {}
 
 template <typename data_t, typename read_count_t, typename write_count_t>
-inline typename sequential<data_t, read_count_t, write_count_t>::slice_type
-sequential<data_t, read_count_t, write_count_t>::get(
-    const address_t&    address,
-    const read_count_t& count) const {
+inline typename sequential<data_t, read_count_t, write_count_t>::data_reference
+sequential<data_t, read_count_t, write_count_t>::ref(const address_t& address) {
+  if (!validate(address)) {
+    throw ex::out_of_range("Address is not valid");
+  }
+
+  address_t idx = address - starting_address();
+  return container_[idx()];
+}
+
+template <typename data_t, typename read_count_t, typename write_count_t> inline
+    typename sequential<data_t, read_count_t, write_count_t>::mutable_slice_type
+    sequential<data_t, read_count_t, write_count_t>::ref(
+        const address_t& address,
+        size_type        count) {
+  if (!validate_sz(address, count)) {
+    throw ex::out_of_range("Address and count are not valid");
+  }
+
+  address_t idx = address - starting_address();
+  return {container().begin() + idx(), container().begin() + idx() + count};
+}
+
+template <typename data_t, typename read_count_t, typename write_count_t> inline
+    typename sequential<data_t, read_count_t, write_count_t>::slice_type
+    sequential<data_t, read_count_t, write_count_t>::get(
+        const address_t&    address,
+        const read_count_t& count) const {
   std::lock_guard<std::shared_mutex> lock(mutex_);
   address_t                          idx = address - starting_address();
   if (!validate(idx, count)) {
     throw ex::out_of_range("Address and count are not valid");
   }
 
-  return {container().begin() + idx(), container().begin() + idx() + count()};
+  return {container().cbegin() + idx(), container().cbegin() + idx() + count()};
 }
 
-template <typename data_t, typename read_count_t, typename write_count_t>
-inline typename sequential<data_t, read_count_t, write_count_t>::const_reference
-sequential<data_t, read_count_t, write_count_t>::get(
-    const address_t& address) const {
+template <typename data_t, typename read_count_t, typename write_count_t> inline
+    typename sequential<data_t, read_count_t, write_count_t>::
+        const_data_reference
+        sequential<data_t, read_count_t, write_count_t>::get(
+            const address_t& address) const {
   std::lock_guard<std::shared_mutex> lock(mutex_);
   if (!validate(address)) {
     throw ex::out_of_range("Address is not valid");

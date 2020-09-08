@@ -61,6 +61,11 @@ class base {
   typedef base_container_t<data_type> container_type;
 
   /**
+   * Mutable iterator type
+   */
+  typedef typename container_type::iterator mutable_iterator_type;
+
+  /**
    * Iterator type
    */
   typedef typename container_type::const_iterator iterator_type;
@@ -73,14 +78,27 @@ class base {
   typedef std::pair<iterator_type, iterator_type> slice_type;
 
   /**
+   * Mutable slice type
+   *
+   * Containing begin and end that denotes mutable slice of container
+   */
+  typedef std::pair<mutable_iterator_type, mutable_iterator_type>
+      mutable_slice_type;
+
+  /**
    * Size type
    */
   typedef typename container_type::size_type size_type;
 
   /**
+   * Reference
+   */
+  typedef typename container_type::reference data_reference;
+
+  /**
    * Const reference
    */
-  typedef typename container_type::const_reference const_reference;
+  typedef typename container_type::const_reference const_data_reference;
 
   /**
    * Max capacity
@@ -107,6 +125,26 @@ class base {
                 const container_type& container) noexcept;
 
   /**
+   * Get reference of single data from container
+   *
+   * @param address look-up address
+   *
+   * @return reference of single data from container
+   */
+  virtual data_reference ref(const address_t& address) = 0;
+
+  /**
+   * Get reference of data from container
+   *
+   * @param address look-up address
+   * @param count   number of slice
+   *
+   * @return pair of mutable iterator (begin and end) slice of data from
+   * container
+   */
+  virtual mutable_slice_type ref(const address_t& address, size_type count) = 0;
+
+  /**
    * Get slice of data from container
    *
    * @param address look-up address
@@ -124,7 +162,7 @@ class base {
    *
    * @return single value from container
    */
-  virtual const_reference get(const address_t& address) const = 0;
+  virtual const_data_reference get(const address_t& address) const = 0;
 
   /**
    * Set slice of data from container
@@ -280,6 +318,12 @@ class sequential
       container_type;
 
   /**
+   * Mutable iterator type
+   */
+  using typename base<std::vector, data_t, read_count_t, write_count_t>::
+      mutable_iterator_type;
+
+  /**
    * Iterator type
    */
   using typename base<std::vector, data_t, read_count_t, write_count_t>::
@@ -294,16 +338,30 @@ class sequential
       slice_type;
 
   /**
+   * Mutable slice type
+   *
+   * Containing begin and end that denotes mutable slice of container
+   */
+  using typename base<std::vector, data_t, read_count_t, write_count_t>::
+      mutable_slice_type;
+
+  /**
    * Size type
    */
   using typename base<std::vector, data_t, read_count_t, write_count_t>::
       size_type;
 
   /**
-   * Const reference
+   * Data reference
    */
   using typename base<std::vector, data_t, read_count_t, write_count_t>::
-      const_reference;
+      data_reference;
+
+  /**
+   * Const data reference
+   */
+  using typename base<std::vector, data_t, read_count_t, write_count_t>::
+      const_data_reference;
 
   /**
    * Container max capacity
@@ -361,6 +419,27 @@ class sequential
                       const container_type& container) noexcept;
 
   /**
+   * Get reference of single data from container
+   *
+   * @param address look-up address
+   *
+   * @return reference of single data from container
+   */
+  virtual data_reference ref(const address_t& address) override;
+
+  /**
+   * Get reference of data from container
+   *
+   * @param address look-up address
+   * @param count   number of slice
+   *
+   * @return pair of mutable iterator (begin and end) slice of data from
+   * container
+   */
+  virtual mutable_slice_type ref(const address_t& address,
+                                 size_type        count) override;
+
+  /**
    * Get slice of data from container
    *
    * @param address starting address
@@ -379,7 +458,7 @@ class sequential
    *
    * @return single value from container
    */
-  virtual const_reference get(const address_t& address) const override;
+  virtual const_data_reference get(const address_t& address) const override;
 
   /**
    * Set slice of data from container
@@ -402,7 +481,6 @@ class sequential
    * Reset container
    */
   virtual void reset() override;
-
   /**
    * Starting address getter
    */

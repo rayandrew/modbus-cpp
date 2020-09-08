@@ -23,7 +23,7 @@ jobs:
       run: |
         sudo add-apt-repository ppa:mhier/libboost-latest
         sudo apt-get update
-        sudo apt-get install libboost1.74 -y
+        sudo apt-get install libboost1.74 libboost1.74-dev -y
 
     - name: build and install library
       run: |
