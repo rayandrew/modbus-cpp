@@ -32,7 +32,7 @@ jobs:
         rm -rf build
 
     - name: configure
-      run: cmake -Htest -Bbuild -DTEST_INSTALLED_VERSION=1
+      run: BOOST_ROOT=$BOOST_ROOT_1_72_0 cmake -Htest -Bbuild -DTEST_INSTALLED_VERSION=1
 
     - name: build
       run: cmake --build build --config Debug -j4
