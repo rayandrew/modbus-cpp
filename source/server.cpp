@@ -1,14 +1,14 @@
-#include <modbuscpp/details/server.hpp>
+#include <modbuscpp/modbuscpp/server.hpp>
 
 #include <utility>
 
 #include <fmt/format.h>
 
-#include <modbuscpp/details/adu.hpp>
-#include <modbuscpp/details/constants.hpp>
-#include <modbuscpp/details/logger.hpp>
-#include <modbuscpp/details/request-handler.hpp>
-#include <modbuscpp/details/types.hpp>
+#include <modbuscpp/modbuscpp/adu.hpp>
+#include <modbuscpp/modbuscpp/constants.hpp>
+#include <modbuscpp/modbuscpp/logger.hpp>
+#include <modbuscpp/modbuscpp/request-handler.hpp>
+#include <modbuscpp/modbuscpp/types.hpp>
 
 namespace modbus {
 server::server(table::pointer data_table, std::size_t concurrency)
@@ -25,7 +25,7 @@ server::server(table::pointer data_table, std::size_t concurrency)
 }
 
 server::~server() {
-  server_.stop();
+  stop();
 }
 
 void server::on_start(asio::error_code ec) {
@@ -70,5 +70,9 @@ void server::on_receive(session_ptr_t&   session_ptr,
 
 void server::run(std::string_view host, std::string_view port) {
   server_.start(host, port);
+}
+
+void server::stop() {
+  server_.stop();
 }
 }  // namespace modbus

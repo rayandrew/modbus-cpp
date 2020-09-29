@@ -1,11 +1,11 @@
-#include <modbuscpp/details/response.hpp>
+#include <modbuscpp/modbuscpp/response.hpp>
 
 #include <fmt/format.h>
 
-#include <modbuscpp/details/logger.hpp>
-#include <modbuscpp/details/struct.hpp>
-#include <modbuscpp/details/types.hpp>
-#include <modbuscpp/details/utilities.hpp>
+#include <modbuscpp/modbuscpp/logger.hpp>
+#include <modbuscpp/modbuscpp/struct.hpp>
+#include <modbuscpp/modbuscpp/types.hpp>
+#include <modbuscpp/modbuscpp/utilities.hpp>
 
 namespace modbus {
 namespace internal {

@@ -1,4 +1,4 @@
-#include <modbuscpp/details/logger.hpp>
+#include <modbuscpp/modbuscpp/logger.hpp>
 
 namespace modbus {
 logger* logger::instance_ = nullptr;

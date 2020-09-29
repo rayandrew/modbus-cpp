@@ -1,5 +1,5 @@
-#include <modbuscpp/details/data-table.hpp>
-#include <modbuscpp/details/data-table.inline.hpp>
+#include <modbuscpp/modbuscpp/data-table.hpp>
+#include <modbuscpp/modbuscpp/data-table.inline.hpp>
 
 namespace modbus {
 table::table(const table::initializer_t& initializer) noexcept

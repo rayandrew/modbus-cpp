@@ -1,4 +1,4 @@
-#include <modbuscpp/details/operation.hpp>
+#include <modbuscpp/modbuscpp/operation.hpp>
 
 namespace modbus {
 namespace op {

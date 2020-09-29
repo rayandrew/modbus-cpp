@@ -1,9 +1,9 @@
-#include <modbuscpp/details/request.hpp>
+#include <modbuscpp/modbuscpp/request.hpp>
 
-#include <modbuscpp/details/data-table.hpp>
-#include <modbuscpp/details/exception.hpp>
-#include <modbuscpp/details/struct.hpp>
-#include <modbuscpp/details/utilities.hpp>
+#include <modbuscpp/modbuscpp/data-table.hpp>
+#include <modbuscpp/modbuscpp/exception.hpp>
+#include <modbuscpp/modbuscpp/struct.hpp>
+#include <modbuscpp/modbuscpp/utilities.hpp>
 
 namespace modbus {
 namespace internal {

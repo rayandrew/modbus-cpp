@@ -1,22 +1,22 @@
-#include <modbuscpp/details/request-handler.hpp>
+#include <modbuscpp/modbuscpp/request-handler.hpp>
 
 #include <utility>
 
 #include <fmt/core.h>
 #include <fmt/ostream.h>
 
-#include <modbuscpp/details/constants.hpp>
-#include <modbuscpp/details/exception.hpp>
-#include <modbuscpp/details/logger.hpp>
-#include <modbuscpp/details/utilities.hpp>
+#include <modbuscpp/modbuscpp/constants.hpp>
+#include <modbuscpp/modbuscpp/exception.hpp>
+#include <modbuscpp/modbuscpp/logger.hpp>
+#include <modbuscpp/modbuscpp/utilities.hpp>
 
-#include <modbuscpp/details/adu.hpp>
-#include <modbuscpp/details/response.hpp>
+#include <modbuscpp/modbuscpp/adu.hpp>
+#include <modbuscpp/modbuscpp/response.hpp>
 
-#include <modbuscpp/details/bit-read.hpp>
-#include <modbuscpp/details/bit-write.hpp>
-#include <modbuscpp/details/register-read.hpp>
-#include <modbuscpp/details/register-write.hpp>
+#include <modbuscpp/modbuscpp/bit-read.hpp>
+#include <modbuscpp/modbuscpp/bit-write.hpp>
+#include <modbuscpp/modbuscpp/register-read.hpp>
+#include <modbuscpp/modbuscpp/register-write.hpp>
 
 namespace modbus {
 packet_t request_handler::handle(table*                  data_table,

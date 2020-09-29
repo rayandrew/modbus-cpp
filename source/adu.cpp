@@ -1,9 +1,9 @@
-#include <modbuscpp/details/adu.hpp>
+#include <modbuscpp/modbuscpp/adu.hpp>
 
 #include <string>
 
-#include <modbuscpp/details/struct.hpp>
-#include <modbuscpp/details/utilities.hpp>
+#include <modbuscpp/modbuscpp/struct.hpp>
+#include <modbuscpp/modbuscpp/utilities.hpp>
 
 namespace modbus {
 namespace internal {

@@ -1,15 +1,15 @@
-#include <modbuscpp/details/register-read.hpp>
-#include <modbuscpp/details/register-read.inline.hpp>
+#include <modbuscpp/modbuscpp/register-read.hpp>
+#include <modbuscpp/modbuscpp/register-read.inline.hpp>
 
 #include <algorithm>
 #include <exception>
 
 #include <struc.hpp>
 
-#include <modbuscpp/details/exception.hpp>
-#include <modbuscpp/details/logger.hpp>
-#include <modbuscpp/details/operation.hpp>
-#include <modbuscpp/details/utilities.hpp>
+#include <modbuscpp/modbuscpp/exception.hpp>
+#include <modbuscpp/modbuscpp/logger.hpp>
+#include <modbuscpp/modbuscpp/operation.hpp>
+#include <modbuscpp/modbuscpp/utilities.hpp>
 
 namespace modbus {
 namespace request {

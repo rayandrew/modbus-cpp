@@ -64,27 +64,27 @@ include(cmake/Asio2.cmake)
 # automatically. Keep that in mind when changing files, or explicitly mention them here.
 set(headers
     ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbus.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/asio2.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/struct.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/data-table.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/data-table.inline.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/constants.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/exception.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/logger.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/operation.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/types.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/utilities.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/adu.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/request.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/response.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/bit-read.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/bit-read.inline.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/bit-write.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/register-read.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/register-read.inline.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/register-write.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/request-handler.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/details/server.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/asio2.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/struct.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/data-table.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/data-table.inline.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/constants.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/exception.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/logger.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/operation.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/types.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/utilities.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/adu.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/request.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/response.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/bit-read.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/bit-read.inline.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/bit-write.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/register-read.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/register-read.inline.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/register-write.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/request-handler.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/modbuscpp/modbuscpp/server.hpp
 )
 
 set(sources

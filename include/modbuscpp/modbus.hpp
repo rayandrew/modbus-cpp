@@ -12,40 +12,40 @@
 #  undef exception_code
 #endif
 
-#include "details/asio2.hpp"
-#include "details/struct.hpp"
+#include "modbuscpp/asio2.hpp"
+#include "modbuscpp/struct.hpp"
 
-#include "details/constants.hpp"
-#include "details/types.hpp"
+#include "modbuscpp/constants.hpp"
+#include "modbuscpp/types.hpp"
 
-#include "details/exception.hpp"
+#include "modbuscpp/exception.hpp"
 
-#include "details/utilities.hpp"
+#include "modbuscpp/utilities.hpp"
 
-#include "details/logger.hpp"
+#include "modbuscpp/logger.hpp"
 
-#include "details/data-table.hpp"
-#include "details/data-table.inline.hpp"
+#include "modbuscpp/data-table.hpp"
+#include "modbuscpp/data-table.inline.hpp"
 
-#include "details/operation.hpp"
+#include "modbuscpp/operation.hpp"
 
-#include "details/adu.hpp"
-#include "details/request.hpp"
-#include "details/response.hpp"
+#include "modbuscpp/adu.hpp"
+#include "modbuscpp/request.hpp"
+#include "modbuscpp/response.hpp"
 
 // Functions implementation
-#include "details/bit-read.hpp"
-#include "details/bit-read.inline.hpp"
+#include "modbuscpp/bit-read.hpp"
+#include "modbuscpp/bit-read.inline.hpp"
 
-#include "details/bit-write.hpp"
+#include "modbuscpp/bit-write.hpp"
 
-#include "details/register-read.hpp"
-#include "details/register-read.inline.hpp"
+#include "modbuscpp/register-read.hpp"
+#include "modbuscpp/register-read.inline.hpp"
 
-#include "details/register-write.hpp"
+#include "modbuscpp/register-write.hpp"
 
-#include "details/request-handler.hpp"
+#include "modbuscpp/request-handler.hpp"
 
-#include "details/server.hpp"
+#include "modbuscpp/server.hpp"
 
 #endif  // LIB_MODBUS_MODBUS_HPP_
