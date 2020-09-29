@@ -36,7 +36,7 @@ packet_t request_handler::handle(table* data_table, const packet_t& packet) {
     constants::function_code function
         = static_cast<constants::function_code>(packet.at(header_length));
 
-    logger::info("Get {} request", function_code_str(function));
+    logger::debug("Get {} request", function_code_str(function));
 
     switch (function) {
       case constants::function_code::read_coils: {
