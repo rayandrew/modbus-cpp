@@ -144,11 +144,11 @@ template <typename data_t, typename read_count_t, typename write_count_t> inline
         const address_t&    address,
         const read_count_t& count) const {
   std::lock_guard<std::shared_mutex> lock(mutex_);
-  address_t                          idx = address - starting_address();
-  if (!validate(idx, count)) {
+  if (!validate(address, count)) {
     throw ex::out_of_range("Address and count are not valid");
   }
 
+  address_t idx = address - starting_address();
   return {container().cbegin() + idx(), container().cbegin() + idx() + count()};
 }
 
